@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --ios-blue-50: #eff6ff;
+  --ios-blue-100: #dbeafe;
+  --ios-blue-200: #bfdbfe;
+  --ios-blue-300: #93c5fd;
+  --ios-blue-400: #60a5fa;
+  --ios-blue-500: #3b82f6;
+  --ios-blue-600: #2563eb;
+  --ios-blue-700: #1d4ed8;
+  --ios-blue-800: #1e40af;
+  --ios-blue-900: #1e3a8a;
+  
+  --glass-white: rgba(255, 255, 255, 0.8);
+  --glass-light: rgba(255, 255, 255, 0.2);
+  --glass-medium: rgba(255, 255, 255, 0.3);
+  --glass-dark: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-shadow-light: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-glass-white backdrop-blur-md border border-glass-light shadow-glass-light;
+  }
+  
+  .glass-card {
+    @apply bg-glass-white backdrop-blur-md rounded-2xl p-6 shadow-glass-light border border-glass-light hover:shadow-glass transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .glass-button {
+    @apply bg-ios-blue-500 hover:bg-ios-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 shadow-glass-light;
+  }
+  
+  .glass-button-secondary {
+    @apply bg-white hover:bg-gray-50 text-ios-blue-600 border border-ios-blue-500 px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .shadow-glass {
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .shadow-glass-light {
+    box-shadow: var(--glass-shadow-light);
+  }
+  
+  .bg-glass-white {
+    background-color: var(--glass-white);
+  }
+  
+  .bg-glass-light {
+    background-color: var(--glass-light);
+  }
+  
+  .bg-glass-medium {
+    background-color: var(--glass-medium);
+  }
+  
+  .border-glass-light {
+    border-color: var(--glass-light);
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Smooth animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-ios-blue-500 focus:ring-offset-2;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-200;
+}
+
+/* Responsive text */
+.text-responsive {
+  @apply text-sm sm:text-base lg:text-lg;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-glass;
+} 
