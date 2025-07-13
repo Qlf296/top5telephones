@@ -34,7 +34,7 @@ export const phones: Phone[] = [
     brand: "Samsung",
     price: 189,
     originalPrice: 229,
-    image: "/images/samsung-galaxy-a14.jpg",
+    image: "/images/real/samsung-galaxy-a14/vue-avant-seul.png",
     specs: {
       screen: "6.6\" FHD+ PLS LCD",
       processor: "Exynos 850",
