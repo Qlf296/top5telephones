@@ -114,7 +114,7 @@
   }
   
   .phone-viewer-thumbnail {
-    @apply relative w-[60px] h-[90px] sm:w-[80px] sm:h-[120px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 ease-in-out hover:scale-105 flex items-center justify-center group;
+    @apply relative w-[60px] h-[90px] sm:w-[80px] sm:h-[120px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 ease-in-out hover:scale-105 flex items-center justify-center;
   }
   
   /* Responsive grid improvements */
