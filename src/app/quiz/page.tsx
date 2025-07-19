@@ -12,7 +12,7 @@ interface Question {
   options: {
     value: string;
     label: string;
-    weight: Record<string, number>;
+    weight: Record<string, number | string>;
   }[];
 }
 
@@ -92,31 +92,31 @@ export default function QuizPage() {
           let score = 0;
           
           // Price scoring
-          if (selectedOption.weight.price !== undefined) {
+          if (typeof selectedOption.weight.price === 'number') {
             const maxPrice = Math.max(...phones.map(p => p.price));
             const priceScore = 1 - (phone.price / maxPrice);
             score += priceScore * selectedOption.weight.price;
           }
           
           // Brand scoring
-          if (selectedOption.weight.brand && phone.brand === selectedOption.weight.brand) {
+          if (typeof selectedOption.weight.brand === 'string' && phone.brand === selectedOption.weight.brand) {
             score += 0.5;
           }
           
           // Performance scoring (based on RAM and processor)
-          if (selectedOption.weight.performance !== undefined) {
+          if (typeof selectedOption.weight.performance === 'number') {
             const ramScore = parseInt(phone.specs.ram.replace('GB', '')) / 8; // Normalize to 8GB max
             score += ramScore * selectedOption.weight.performance;
           }
           
           // Camera scoring
-          if (selectedOption.weight.camera !== undefined) {
+          if (typeof selectedOption.weight.camera === 'number') {
             const cameraScore = phone.specs.camera.includes('50MP') ? 1 : 0.5;
             score += cameraScore * selectedOption.weight.camera;
           }
           
           // Storage scoring
-          if (selectedOption.weight.storage !== undefined) {
+          if (typeof selectedOption.weight.storage === 'number') {
             const storageScore = phone.specs.storage.includes('256GB') ? 1 : 0.7;
             score += storageScore * selectedOption.weight.storage;
           }

@@ -1,155 +1,160 @@
 # 🚀 Guide de Déploiement - Top 5 Téléphones
 
-## Déploiement sur Vercel (Recommandé)
+## 📋 Prérequis
 
-### 1. Préparation
+- Compte Vercel (gratuit) ou Netlify
+- Nom de domaine (top5telephones.fr)
+- Compte Google Analytics 4
+- Compte Microsoft Clarity
+
+## 🔧 Configuration avant déploiement
+
+### 1. Variables d'environnement
+
+Créez un fichier `.env.local` avec :
+
 ```bash
-# Vérifier que tout fonctionne localement
-npm run build
-npm run start
-```
-
-### 2. Déploiement automatique
-1. **Créer un compte Vercel** : https://vercel.com
-2. **Connecter GitHub** : Importer le repository
-3. **Configuration automatique** : Vercel détecte Next.js
-4. **Déploiement** : Chaque push déclenche un déploiement
-
-### 3. Variables d'environnement (optionnel)
-```env
+# Configuration du site
 NEXT_PUBLIC_SITE_URL=https://top5telephones.fr
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
+NEXT_PUBLIC_SITE_NAME=Top 5 Téléphones
+
+# Google Analytics 4 (remplacez par votre ID)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Microsoft Clarity (remplacez par votre ID)
+NEXT_PUBLIC_CLARITY_ID=YOUR_CLARITY_ID
+
+# Google Search Console
+NEXT_PUBLIC_GOOGLE_VERIFICATION=your-google-verification-code
 ```
 
-## 🎯 Domaines personnalisés
+### 2. Configuration Analytics
 
-### Configuration DNS
-```
-Type: CNAME
-Name: www
-Value: cname.vercel-dns.com
-```
+1. **Google Analytics 4** :
+   - Créez une propriété GA4
+   - Remplacez `G-XXXXXXXXXX` par votre ID de mesure
+   - Activez la collecte de données
 
-### Vercel Configuration
-- Ajouter le domaine dans les paramètres Vercel
-- Vérifier la propriété du domaine
-- SSL automatique inclus
+2. **Microsoft Clarity** :
+   - Créez un projet Clarity
+   - Remplacez `YOUR_CLARITY_ID` par votre ID
+   - Configurez les événements personnalisés
 
-## 📊 Analytics & Monitoring
+## 🚀 Déploiement sur Vercel
 
-### Google Analytics
-1. Créer une propriété GA4
-2. Ajouter le code de suivi dans `layout.tsx`
-3. Configurer les événements de conversion
+### Option 1 : Déploiement automatique (recommandé)
 
-### Vercel Analytics
-- Activé automatiquement
-- Métriques de performance
-- Erreurs en temps réel
+1. **Connectez votre repo GitHub** à Vercel
+2. **Importez le projet** dans Vercel
+3. **Configurez les variables d'environnement** dans Vercel
+4. **Déployez** automatiquement
 
-## 🔧 Optimisations post-déploiement
-
-### 1. Performance
-- [ ] Vérifier Core Web Vitals
-- [ ] Optimiser les images
-- [ ] Activer la compression
-
-### 2. SEO
-- [ ] Soumettre le sitemap à Google
-- [ ] Configurer Google Search Console
-- [ ] Vérifier les meta tags
-
-### 3. Sécurité
-- [ ] Configurer les headers de sécurité
-- [ ] Activer HTTPS
-- [ ] Vérifier les vulnérabilités
-
-## 🚀 Commandes utiles
+### Option 2 : Déploiement manuel
 
 ```bash
-# Build de production
-npm run build
+# Installation de Vercel CLI
+npm i -g vercel
 
-# Test local de production
-npm run start
+# Login
+vercel login
 
-# Lint et vérifications
-npm run lint
-
-# Vérifier les types TypeScript
-npx tsc --noEmit
+# Déploiement
+vercel --prod
 ```
 
-## 📈 Monitoring
+## 🔍 Configuration post-déploiement
 
-### Métriques à surveiller
-- **Performance** : Core Web Vitals > 90
-- **Disponibilité** : 99.9%+
-- **Erreurs** : < 0.1%
-- **Temps de réponse** : < 200ms
+### 1. Google Search Console
 
-### Outils recommandés
-- **Vercel Analytics** : Performance
-- **Google Analytics** : Trafic
-- **Google Search Console** : SEO
-- **Hotjar** : UX
+1. **Ajoutez votre propriété** : `https://top5telephones.fr`
+2. **Vérifiez la propriété** avec le code HTML
+3. **Soumettez votre sitemap** : `https://top5telephones.fr/sitemap.xml`
+4. **Configurez les paramètres** :
+   - Pays cible : France
+   - Langue : Français
+   - Paramètres internationaux : Non
 
-## 🔄 Workflow de mise à jour
+### 2. Google Analytics 4
 
-### 1. Développement local
-```bash
-npm run dev
-# Modifier le code
-git add .
-git commit -m "Description des changements"
-git push
-```
+1. **Configurez les objectifs** :
+   - Pages vues
+   - Temps sur le site
+   - Clics sur les liens de comparaison
+   - Conversions (achats via liens affiliés)
 
-### 2. Déploiement automatique
-- Vercel déploie automatiquement
-- Tests automatiques inclus
-- Rollback en 1 clic si problème
+2. **Activez les rapports** :
+   - Audience
+   - Acquisition
+   - Comportement
+   - Conversions
 
-### 3. Vérification post-déploiement
-- [ ] Tester toutes les pages
-- [ ] Vérifier les images
-- [ ] Contrôler les liens affiliés
-- [ ] Tester sur mobile
+### 3. Microsoft Clarity
+
+1. **Configurez les heatmaps** pour :
+   - Page d'accueil
+   - Pages de comparaison
+   - Pages de test
+
+2. **Activez les enregistrements** de session
+
+## 📊 Monitoring et optimisation
+
+### 1. Core Web Vitals
+
+Surveillez via Google Search Console :
+- **LCP** (Largest Contentful Paint) : < 2.5s
+- **FID** (First Input Delay) : < 100ms
+- **CLS** (Cumulative Layout Shift) : < 0.1
+
+### 2. Performance
+
+- **Lighthouse Score** : > 90
+- **PageSpeed Insights** : > 90
+- **GTmetrix** : A+ grade
+
+### 3. SEO
+
+- **Indexation** : Vérifiez dans Google Search Console
+- **Mots-clés** : Surveillez les positions
+- **Backlinks** : Utilisez Ahrefs ou Majestic
+
+## 🔧 Maintenance
+
+### Mises à jour régulières
+
+1. **Next.js** : Mise à jour mensuelle
+2. **Dépendances** : `npm audit fix`
+3. **Contenu** : Ajout d'articles hebdomadaire
+4. **Backlinks** : Acquisition continue
+
+### Monitoring
+
+- **Uptime** : Vercel Analytics
+- **Erreurs** : Vercel Functions Logs
+- **Performance** : Google PageSpeed Insights
+- **SEO** : Google Search Console
 
 ## 🎯 Checklist de lancement
 
-### Technique
-- [ ] Site déployé et accessible
-- [ ] Toutes les pages fonctionnent
-- [ ] Images et liens OK
-- [ ] Performance optimale
-- [ ] SEO configuré
+- [ ] Déploiement réussi sur Vercel
+- [ ] Variables d'environnement configurées
+- [ ] Google Analytics 4 actif
+- [ ] Microsoft Clarity configuré
+- [ ] Google Search Console configuré
+- [ ] Sitemap soumis
+- [ ] Test de performance > 90
+- [ ] Test mobile réussi
+- [ ] Liens internes fonctionnels
+- [ ] Images optimisées
+- [ ] Meta tags vérifiés
 
-### Marketing
-- [ ] Comptes réseaux sociaux créés
-- [ ] Contenu Reddit/Dealabs prêt
-- [ ] Stratégie de lancement définie
-- [ ] Analytics configurés
+## 📈 Prochaines étapes
 
-### Monétisation
-- [ ] Liens affiliés testés
-- [ ] Codes d'affiliation valides
-- [ ] Tracking des conversions
-- [ ] Plan de revenus défini
-
-## 🆘 Support
-
-### Problèmes courants
-1. **Images qui ne se chargent pas** : Vérifier les chemins
-2. **Erreurs de build** : Vérifier TypeScript
-3. **Performance lente** : Optimiser les images
-4. **SEO** : Vérifier les meta tags
-
-### Ressources
-- **Documentation Vercel** : https://vercel.com/docs
-- **Next.js** : https://nextjs.org/docs
-- **Support** : GitHub Issues
+1. **Semaine 1** : Monitoring des performances
+2. **Semaine 2** : Optimisation SEO basée sur les données
+3. **Semaine 3** : Lancement de la stratégie de backlinks
+4. **Mois 1** : Analyse des premiers résultats
 
 ---
 
-**🎉 Votre site est prêt à conquérir le web !** 
+**Votre site est maintenant prêt pour la mise en ligne !** 🚀 

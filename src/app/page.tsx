@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { getTop5Phones } from '@/data/phones';
 import Image from 'next/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import OptimizedImage from '@/components/OptimizedImage';
 
 export const metadata: Metadata = {
   title: 'Top 5 Téléphones à moins de 300€ - Meilleurs Smartphones 2024',
@@ -24,6 +27,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-ios-blue-50 to-white">
+      <Header />
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
@@ -124,6 +128,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 } 

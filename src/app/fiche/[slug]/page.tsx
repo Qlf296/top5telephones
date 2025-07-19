@@ -6,9 +6,10 @@ import Footer from '@/components/Footer';
 import { getPhoneBySlug, getAllPhones } from '@/data/phones';
 import { formatPrice, calculateDiscount, generateStars, formatDate } from '@/lib/utils';
 import FicheImageSection from '@/components/FicheImageSection';
+import ProductSchema from '@/components/ProductSchema';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -51,6 +52,7 @@ export default async function FichePage(props: PageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-ios-blue-50 to-white">
+      <ProductSchema phone={phone} />
       <Header />
       
       <main className="pt-16">

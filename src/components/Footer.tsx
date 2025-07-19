@@ -66,19 +66,24 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
+                <Link href="/a-propos" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
                   À propos
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
+                <Link href="/contact" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
+                <Link href="/politique-confidentialite" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
                   Politique de confidentialité
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/mentions-legales" className="text-gray-600 hover:text-ios-blue-600 transition-colors">
+                  Mentions légales
+                </Link>
               </li>
             </ul>
           </div>
