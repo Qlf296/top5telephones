@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -180,6 +181,9 @@ export default function RootLayout({
             `,
           }}
         />
+        
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   )
