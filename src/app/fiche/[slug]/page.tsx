@@ -223,9 +223,9 @@ export default async function FichePage(props: PageProps) {
           </div>
 
           {/* Related Phones */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Autres téléphones à découvrir</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 sm:mt-16">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Autres téléphones à découvrir</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {getAllPhones()
                 .filter(p => p.id !== phone.id)
                 .slice(0, 3)
@@ -235,20 +235,20 @@ export default async function FichePage(props: PageProps) {
                     href={`/fiche/${relatedPhone.slug}`}
                     className="glass-card hover:shadow-glass transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="relative h-48 mb-4 rounded-xl overflow-hidden bg-white">
+                    <div className="relative aspect-[4/3] mb-3 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-white">
                       <Image
                         src={relatedPhone.image}
                         alt={relatedPhone.name}
                         fill
-                        className="object-contain p-2"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain p-2 sm:p-3 transition-transform duration-300 hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{relatedPhone.name}</h3>
-                    <p className="text-ios-blue-600 font-semibold mb-2">{formatPrice(relatedPhone.price)}</p>
+                    <h3 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base leading-tight">{relatedPhone.name}</h3>
+                    <p className="text-ios-blue-600 font-semibold mb-1 sm:mb-2 text-sm sm:text-base">{formatPrice(relatedPhone.price)}</p>
                     <div className="flex items-center space-x-2">
-                      <span className="text-yellow-400 text-sm">{generateStars(relatedPhone.rating)}</span>
-                      <span className="text-gray-600 text-sm">({relatedPhone.rating})</span>
+                      <span className="text-yellow-400 text-xs sm:text-sm">{generateStars(relatedPhone.rating)}</span>
+                      <span className="text-gray-600 text-xs sm:text-sm">({relatedPhone.rating})</span>
                     </div>
                   </a>
                 ))}
