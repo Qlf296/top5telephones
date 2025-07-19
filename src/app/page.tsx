@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getTop5Phones } from '@/data/phones';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Top 5 Téléphones à moins de 300€ - Meilleurs Smartphones 2024',
@@ -67,10 +68,14 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {top5Phones.map((phone, index) => (
                 <div key={phone.id} className="bg-glass-white backdrop-blur-md rounded-2xl p-6 shadow-glass-light border border-glass-light hover:shadow-glass transition-all duration-300 hover:-translate-y-1">
-                  <div className="relative h-48 mb-4 rounded-xl overflow-hidden bg-gray-100">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-gray-500">{phone.brand}</span>
-                    </div>
+                  <div className="relative h-48 mb-4 rounded-xl overflow-hidden bg-white">
+                    <Image
+                      src={phone.image}
+                      alt={phone.name}
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
                   
                   <div className="space-y-3">

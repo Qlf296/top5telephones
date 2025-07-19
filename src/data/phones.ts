@@ -34,7 +34,7 @@ export const phones: Phone[] = [
     brand: "Samsung",
     price: 189,
     originalPrice: 229,
-    image: "/images/real/samsung-galaxy-a14/vue-avant-seul.png",
+    image: "/images/real/samsung-galaxy-a14/front.jpg",
     specs: {
       screen: "6.6\" FHD+ PLS LCD",
       processor: "Exynos 850",
@@ -70,7 +70,7 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     price: 249,
     originalPrice: 299,
-    image: "/images/xiaomi-redmi-note-12.jpg",
+    image: "/images/real/Xiaomi Redmi Note 12/front.jpg",
     specs: {
       screen: "6.67\" FHD+ AMOLED",
       processor: "MediaTek Dimensity 1080",
@@ -106,7 +106,7 @@ export const phones: Phone[] = [
     brand: "Motorola",
     price: 279,
     originalPrice: 329,
-    image: "/images/motorola-moto-g84.jpg",
+    image: "/images/real/Motorola Moto G84/front.jpg",
     specs: {
       screen: "6.55\" FHD+ pOLED",
       processor: "Snapdragon 695",
@@ -142,7 +142,7 @@ export const phones: Phone[] = [
     brand: "Nokia",
     price: 229,
     originalPrice: 269,
-    image: "/images/nokia-g60.jpg",
+    image: "/images/real/Nokia G60/front-back-one.jpg",
     specs: {
       screen: "6.58\" FHD+ LCD",
       processor: "Snapdragon 695",
@@ -178,7 +178,7 @@ export const phones: Phone[] = [
     brand: "Realme",
     price: 259,
     originalPrice: 299,
-    image: "/images/realme-10.jpg",
+    image: "/images/real/Realme 10/front.jpg",
     specs: {
       screen: "6.4\" FHD+ Super AMOLED",
       processor: "MediaTek Dimensity 1080",

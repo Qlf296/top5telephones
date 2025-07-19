@@ -5,13 +5,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getPhoneBySlug, getAllPhones } from '@/data/phones';
 import { formatPrice, calculateDiscount, generateStars, formatDate } from '@/lib/utils';
+import FicheImageSection from '@/components/FicheImageSection';
 
 interface PageProps {
   params: { slug: string };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const phone = getPhoneBySlug(params.slug);
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const { slug } = await props.params;
+  const phone = getPhoneBySlug(slug);
   
   if (!phone) {
     return {
@@ -37,8 +39,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function FichePage({ params }: PageProps) {
-  const phone = getPhoneBySlug(params.slug);
+export default async function FichePage(props: PageProps) {
+  const { slug } = await props.params;
+  const phone = getPhoneBySlug(slug);
 
   if (!phone) {
     notFound();
@@ -74,19 +77,7 @@ export default function FichePage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Image Section */}
             <div className="space-y-6">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden bg-white shadow-glass-light">
-                <Image
-                  src={phone.image}
-                  alt={phone.name}
-                  fill
-                  className="object-cover"
-                />
-                {discount > 0 && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
-                    -{discount}%
-                  </div>
-                )}
-              </div>
+              <FicheImageSection phone={phone} discount={discount} />
 
               {/* Rating */}
               <div className="glass-card">
@@ -244,12 +235,13 @@ export default function FichePage({ params }: PageProps) {
                     href={`/fiche/${relatedPhone.slug}`}
                     className="glass-card hover:shadow-glass transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
+                    <div className="relative h-48 mb-4 rounded-xl overflow-hidden bg-white">
                       <Image
                         src={relatedPhone.image}
                         alt={relatedPhone.name}
                         fill
-                        className="object-cover"
+                        className="object-contain p-2"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{relatedPhone.name}</h3>
