@@ -1,3 +1,10 @@
+export interface PhoneColor {
+  name: string;
+  hex: string;
+  slug: string;
+  image?: string; // Image spécifique à la couleur (optionnel)
+}
+
 export interface Phone {
   id: string;
   name: string;
@@ -5,6 +12,7 @@ export interface Phone {
   price: number;
   originalPrice?: number;
   image: string;
+  colors: PhoneColor[];
   specs: {
     screen: string;
     processor: string;
@@ -35,6 +43,11 @@ export const phones: Phone[] = [
     price: 260,
     originalPrice: 299,
     image: "/images/top5/xiaomi-redmi-note-14-5g/front.png",
+    colors: [
+      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/xiaomi-redmi-note-14-5g/noir/front.png" },
+      { name: "Bleu", hex: "#0ea5e9", slug: "bleu", image: "/images/top5/xiaomi-redmi-note-14-5g/bleu/front.png" },
+      { name: "Vert", hex: "#10b981", slug: "vert", image: "/images/top5/xiaomi-redmi-note-14-5g/vert/front.png" },
+    ],
     specs: {
       screen: "6.67\" FHD+ AMOLED 120Hz",
       processor: "Snapdragon 4 Gen 2",
@@ -72,6 +85,11 @@ export const phones: Phone[] = [
     price: 290,
     originalPrice: 329,
     image: "/images/top5/samsung-galaxy-a35-5g/front.png",
+    colors: [
+      { name: "Noir", hex: "#0f172a", slug: "noir", image: "/images/top5/samsung-galaxy-a35-5g/noir/front.png" },
+      { name: "Bleu", hex: "#1428A0", slug: "bleu", image: "/images/top5/samsung-galaxy-a35-5g/bleu/front.png" },
+      { name: "Violet", hex: "#9333ea", slug: "violet", image: "/images/top5/samsung-galaxy-a35-5g/violet/front.png" },
+    ],
     specs: {
       screen: "6.6\" FHD+ Super AMOLED 120Hz",
       processor: "Exynos 1380",
@@ -109,6 +127,11 @@ export const phones: Phone[] = [
     price: 280,
     originalPrice: 329,
     image: "/images/top5/poco-x7-pro/front.png",
+    colors: [
+      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/poco-x7-pro/noir/front.png" },
+      { name: "Bleu", hex: "#3b82f6", slug: "bleu", image: "/images/top5/poco-x7-pro/bleu/front.png" },
+      { name: "Jaune", hex: "#fbbf24", slug: "jaune", image: "/images/top5/poco-x7-pro/jaune/front.png" },
+    ],
     specs: {
       screen: "6.67\" FHD+ AMOLED 120Hz",
       processor: "MediaTek Dimensity 8300 Ultra",
@@ -146,6 +169,11 @@ export const phones: Phone[] = [
     price: 295,
     originalPrice: 349,
     image: "/images/top5/motorola-edge-50-fusion/front.png",
+    colors: [
+      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/motorola-edge-50-fusion/noir/front.png" },
+      { name: "Bleu", hex: "#5C88DA", slug: "bleu", image: "/images/top5/motorola-edge-50-fusion/bleu/front.png" },
+      { name: "Rose", hex: "#ec4899", slug: "rose", image: "/images/top5/motorola-edge-50-fusion/rose/front.png" },
+    ],
     specs: {
       screen: "6.7\" FHD+ pOLED 144Hz",
       processor: "Snapdragon 7s Gen 3",
@@ -183,6 +211,11 @@ export const phones: Phone[] = [
     price: 270,
     originalPrice: 299,
     image: "/images/top5/samsung-galaxy-a26-5g/front.png",
+    colors: [
+      { name: "Noir", hex: "#0f172a", slug: "noir", image: "/images/top5/samsung-galaxy-a26-5g/noir/front.png" },
+      { name: "Bleu", hex: "#1428A0", slug: "bleu", image: "/images/top5/samsung-galaxy-a26-5g/bleu/front.png" },
+      { name: "Vert", hex: "#059669", slug: "vert", image: "/images/top5/samsung-galaxy-a26-5g/vert/front.png" },
+    ],
     specs: {
       screen: "6.5\" FHD+ Super AMOLED",
       processor: "Exynos 1280",

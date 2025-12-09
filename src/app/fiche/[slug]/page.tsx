@@ -5,12 +5,14 @@ import Link from 'next/link';
 import { getPhoneBySlug, getAllPhones } from '@/data/phones';
 import { formatPrice, calculateDiscount, generateStars, formatDate } from '@/lib/utils';
 import FicheImageSection from '@/components/FicheImageSection';
+import FicheImageSectionWithColor from '@/components/FicheImageSectionWithColor';
 import ProductSchema from '@/components/ProductSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { Button } from '@/components/ui/Button';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionShell } from '@/components/ui/SectionShell';
 import { Pill } from '@/components/ui/Pill';
+import { ColorSelector } from '@/components/ui/ColorSelector';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -123,6 +125,7 @@ export default async function FichePage(props: PageProps) {
             {/* Image Section */}
             <div className="space-y-6">
               <FicheImageSection phone={phone} discount={discount} />
+              {/* Note: FicheImageSectionWithColor peut être utilisé si on veut synchroniser avec ColorSelector */}
 
                 {/* Rating Card */}
                 <GlassCard className="p-6">
@@ -166,6 +169,18 @@ export default async function FichePage(props: PageProps) {
                   )}
                 </div>
 
+                {/* Couleurs disponibles */}
+                {phone.colors && phone.colors.length > 0 && (
+                  <div className="mb-6">
+                    <ColorSelector
+                      colors={phone.colors}
+                      phoneName={phone.name}
+                      phoneSlug={phone.slug}
+                      showImage={false}
+                    />
+                  </div>
+                )}
+
                 {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
@@ -182,8 +197,8 @@ export default async function FichePage(props: PageProps) {
                       <Button
                         as="link"
                       href={phone.affiliateLinks.cdiscount}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         variant="secondary"
                         size="lg"
                         className="flex-1"
