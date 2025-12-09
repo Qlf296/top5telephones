@@ -2,84 +2,76 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { Button } from '@/components/ui/Button';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-ios-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">5</span>
-            </div>
-            <span className="text-xl font-semibold text-gray-900">
-              Top 5 Téléphones
-            </span>
-          </Link>
-
-          {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/" 
-              className="text-gray-700 hover:text-ios-blue-600 transition-colors duration-200 font-medium"
-            >
+  const NavLinks = (
+    <>
+      <Link href="/" className="text-slate-800 hover:text-ios-blue-600 transition-colors duration-200 font-medium">
               Accueil
             </Link>
-            <Link 
-              href="/comparateur" 
-              className="text-gray-700 hover:text-ios-blue-600 transition-colors duration-200 font-medium"
-            >
+      <Link href="/comparateur" className="text-slate-800 hover:text-ios-blue-600 transition-colors duration-200 font-medium">
               Comparateur
             </Link>
-            <Link 
-              href="/quiz" 
-              className="text-gray-700 hover:text-ios-blue-600 transition-colors duration-200 font-medium"
-            >
+      <Link href="/quiz" className="text-slate-800 hover:text-ios-blue-600 transition-colors duration-200 font-medium">
               Quiz
             </Link>
             <div className="relative group">
-              <button className="text-gray-700 hover:text-ios-blue-600 transition-colors duration-200 font-medium flex items-center">
+        <button className="text-slate-800 hover:text-ios-blue-600 transition-colors duration-200 font-medium flex items-center">
                 Plus
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <div className="absolute top-full left-0 mt-2 w-48 ios-card opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-white/25">
                 <div className="py-2">
                   <Link 
                     href="/a-propos" 
-                    className="block px-4 py-2 text-gray-700 hover:bg-ios-blue-50 hover:text-ios-blue-600 transition-colors"
+              className="block px-4 py-2 text-slate-800 hover:bg-white/60 hover:text-ios-blue-600 transition-colors"
                   >
                     À propos
                   </Link>
                   <Link 
                     href="/contact" 
-                    className="block px-4 py-2 text-gray-700 hover:bg-ios-blue-50 hover:text-ios-blue-600 transition-colors"
+              className="block px-4 py-2 text-slate-800 hover:bg-white/60 hover:text-ios-blue-600 transition-colors"
                   >
                     Contact
                   </Link>
                 </div>
               </div>
             </div>
-          </nav>
+    </>
+  );
 
-          {/* CTA Button */}
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mt-4 flex items-center justify-between rounded-full bg-white/70 backdrop-blur-2xl border border-white/30 shadow-[0_16px_36px_rgba(0,0,0,0.10)] px-4 sm:px-6 py-3">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-9 h-9 bg-gradient-to-br from-[#0a84ff] to-[#0071e3] rounded-2xl flex items-center justify-center shadow-[0_10px_24px_rgba(10,132,255,0.25)] border border-white/40">
+              <span className="text-white font-bold text-sm">5</span>
+            </div>
+            <span className="text-lg sm:text-xl font-semibold text-slate-900">Top 5 Téléphones</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">{NavLinks}</nav>
+
+          {/* CTA */}
           <div className="hidden md:block">
-            <Link 
-              href="/comparateur"
-              className="bg-ios-blue-500 hover:bg-ios-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 shadow-glass-light"
-            >
+            <Button as="link" href="/comparateur" size="sm">
               Comparer
-            </Link>
+            </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile burger */}
                       <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+            className="md:hidden p-2 rounded-full bg-white/80 border border-white/30 shadow-[0_8px_18px_rgba(0,0,0,0.08)]"
+            aria-label="Ouvrir le menu"
             >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -89,53 +81,35 @@ export default function Header() {
 
                   {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link 
-                href="/" 
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-ios-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
+          <div className="md:hidden mt-2 rounded-3xl bg-white/85 backdrop-blur-2xl border border-white/30 shadow-[0_16px_32px_rgba(0,0,0,0.12)] p-4 space-y-2">
+            <div className="flex flex-col space-y-2 text-slate-800">
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 rounded-2xl hover:bg-white/60">
                 Accueil
               </Link>
               <Link 
                 href="/comparateur" 
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-ios-blue-600 hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
+                className="px-3 py-2 rounded-2xl hover:bg-white/60"
               >
                 Comparateur
               </Link>
-              <Link 
-                href="/quiz" 
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-ios-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/quiz" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 rounded-2xl hover:bg-white/60">
                 Quiz
               </Link>
-              <Link 
-                href="/a-propos" 
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-ios-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/a-propos" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 rounded-2xl hover:bg-white/60">
                 À propos
               </Link>
-              <Link 
-                href="/contact" 
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-ios-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 rounded-2xl hover:bg-white/60">
                 Contact
               </Link>
-              <div className="px-3 py-2">
+            </div>
                 <Link 
                   href="/comparateur"
-                  className="block w-full bg-ios-blue-500 hover:bg-ios-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-center"
                   onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 font-medium rounded-full transition-transform duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ios-blue-500 px-4 py-2.5 text-base bg-gradient-to-r from-[#0a84ff] to-[#0071e3] text-white border border-white/30 shadow-[0_12px_28px_rgba(10,132,255,0.25)] hover:shadow-[0_16px_32px_rgba(10,132,255,0.28)] w-full"
                 >
                   Comparer
                 </Link>
-              </div>
-            </div>
           </div>
         )}
       </div>

@@ -1,0 +1,36 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  
+    <!-- Ombre portée -->
+    <ellipse cx="400" cy="756" 
+             rx="72" ry="12" 
+             fill="rgba(0,0,0,0.15)" opacity="0.6"/>
+    
+    <!-- Corps du téléphone (profil) -->
+    <rect x="340" y="60" width="120" height="680" 
+          rx="16" fill="white" 
+          stroke="#1428A0" stroke-width="3.2" 
+          opacity="0.98"/>
+    
+    <!-- Boutons de volume -->
+    <rect x="436" 
+          y="230" 
+          width="16" height="81.6" 
+          rx="3.2" fill="rgba(200,200,200,0.6)"/>
+    
+    <!-- Bouton power -->
+    <rect x="436" 
+          y="332" 
+          width="16" height="54.4" 
+          rx="3.2" fill="#1428A0" opacity="0.7"/>
+    
+    <!-- Port USB-C -->
+    <rect x="376" y="706" 
+          width="48" height="20.4" 
+          rx="2.4" fill="rgba(100,100,100,0.5)"/>
+    
+    <!-- Haut-parleur -->
+    <line x1="364" y1="94" 
+          x2="436" y2="94" 
+          stroke="rgba(100,100,100,0.4)" stroke-width="1.6"/>
+  
+</svg>

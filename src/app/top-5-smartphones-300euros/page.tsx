@@ -2,30 +2,44 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { phones } from '@/data/phones'
+import ArticleSchema from '@/components/seo/ArticleSchema'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
-  title: 'Top 5 Smartphones à moins de 300€ en 2024 - Comparatif Complet',
-  description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2024. Comparatif détaillé, tests complets et guide d\'achat pour choisir le meilleur rapport qualité-prix.',
+  title: 'Top 5 Smartphones à moins de 300€ en 2025 - Comparatif Complet',
+  description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2025. Comparatif détaillé, tests complets et guide d\'achat pour choisir le meilleur rapport qualité-prix.',
   keywords: [
     'smartphone moins de 300 euros',
-    'meilleur téléphone pas cher 2024',
+    'meilleur téléphone pas cher 2025',
     'comparatif smartphone 300 euros',
     'top 5 smartphone pas cher',
-    'samsung galaxy a14',
-    'xiaomi redmi note 12',
-    'motorola moto g84',
-    'nokia g60',
-    'realme 10'
+    'xiaomi redmi note 14 5g',
+    'samsung galaxy a35 5g',
+    'poco x7 pro',
+    'motorola edge 50 fusion',
+    'samsung galaxy a26 5g'
   ],
   openGraph: {
-    title: 'Top 5 Smartphones à moins de 300€ en 2024 - Comparatif Complet',
-    description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2024. Comparatif détaillé, tests complets et guide d\'achat.',
-    images: ['/images/social/top-5-smartphones-og.jpg'],
+    title: 'Top 5 Smartphones à moins de 300€ en 2025 - Comparatif Complet',
+    description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2025. Comparatif détaillé, tests complets et guide d\'achat.',
+    url: 'https://top5telephones.fr/top-5-smartphones-300euros',
+    type: 'article',
+    images: [{
+      url: '/images/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Top 5 Smartphones à moins de 300€ en 2025 - Top 5 Téléphones',
+    }],
   },
   twitter: {
-    title: 'Top 5 Smartphones à moins de 300€ en 2024 - Comparatif Complet',
-    description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2024. Comparatif détaillé, tests complets et guide d\'achat.',
-    images: ['/images/social/top-5-smartphones-twitter.jpg'],
+    card: 'summary_large_image',
+    title: 'Top 5 Smartphones à moins de 300€ en 2025 - Comparatif Complet',
+    description: 'Découvrez les 5 meilleurs smartphones à moins de 300€ en 2025. Comparatif détaillé, tests complets et guide d\'achat.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   alternates: {
     canonical: '/top-5-smartphones-300euros',
@@ -154,6 +168,8 @@ export default function Top5SmartphonesPage() {
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        quality={85}
                       />
                     </div>
                     <div>
@@ -258,25 +274,25 @@ export default function Top5SmartphonesPage() {
                 <div className="flex items-start">
                   <span className="text-blue-600 mr-3">📱</span>
                   <div>
-                    <strong>Usage quotidien :</strong> Samsung Galaxy A14
+                    <strong>Usage quotidien :</strong> Xiaomi Redmi Note 14 5G
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="text-blue-600 mr-3">📸</span>
                   <div>
-                    <strong>Photographie :</strong> Xiaomi Redmi Note 12
+                    <strong>Photographie :</strong> Samsung Galaxy A35 5G
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="text-blue-600 mr-3">🎮</span>
                   <div>
-                    <strong>Gaming :</strong> Motorola Moto G84
+                    <strong>Gaming :</strong> Poco X7 Pro
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="text-blue-600 mr-3">💼</span>
                   <div>
-                    <strong>Professionnel :</strong> Nokia G60
+                    <strong>Professionnel :</strong> Motorola Edge 50 Fusion
                   </div>
                 </div>
               </div>
@@ -318,8 +334,8 @@ export default function Top5SmartphonesPage() {
                 Quel est le meilleur smartphone à moins de 300€ ?
               </h3>
               <p className="text-gray-600">
-                Le Samsung Galaxy A14 se distingue par son excellent rapport qualité-prix, 
-                sa caméra performante et sa batterie durable. C'est notre recommandation numéro 1.
+                Le Xiaomi Redmi Note 14 5G se distingue par son excellent rapport qualité-prix, 
+                son écran AMOLED 120Hz, la 5G et sa charge rapide 33W. C'est notre recommandation numéro 1 en 2025.
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -365,36 +381,18 @@ export default function Top5SmartphonesPage() {
       </section>
 
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Top 5 Smartphones à moins de 300€ en 2024 - Comparatif Complet",
-            "description": "Découvrez les 5 meilleurs smartphones à moins de 300€ en 2024. Comparatif détaillé, tests complets et guide d'achat pour choisir le meilleur rapport qualité-prix.",
-            "image": "https://top5telephones.fr/images/social/top-5-smartphones-og.jpg",
-            "author": {
-              "@type": "Organization",
-              "name": "Top 5 Téléphones"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Top 5 Téléphones",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://top5telephones.fr/images/logo.png"
-              }
-            },
-            "datePublished": "2024-01-15",
-            "dateModified": "2024-01-15",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://top5telephones.fr/top-5-smartphones-300euros"
-            }
-          })
-        }}
+      <ArticleSchema
+        headline="Top 5 Smartphones à moins de 300€ en 2024 - Comparatif Complet"
+        description="Découvrez les 5 meilleurs smartphones à moins de 300€ en 2024. Comparatif détaillé, tests complets et guide d'achat pour choisir le meilleur rapport qualité-prix."
+        image="https://top5telephones.fr/images/og-image.jpg"
+        url="https://top5telephones.fr/top-5-smartphones-300euros"
+        datePublished="2024-01-15"
+        dateModified="2024-01-15"
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://top5telephones.fr/' },
+        { name: 'Top 5 Smartphones', url: 'https://top5telephones.fr/top-5-smartphones-300euros' },
+      ]} />
     </div>
   )
 } 

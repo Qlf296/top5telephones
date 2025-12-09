@@ -1,0 +1,46 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  
+    <!-- Ombre portée -->
+    <ellipse cx="400" cy="756" 
+             rx="160" ry="12" 
+             fill="rgba(0,0,0,0.15)" opacity="0.6"/>
+    
+    <!-- Corps du téléphone -->
+    <rect x="200" y="60" width="400" height="680" 
+          rx="24" fill="white" 
+          stroke="#5C88DA" stroke-width="3.2" 
+          opacity="0.98"/>
+    
+    <!-- Bordure métallique -->
+    <rect x="201.6" y="61.6" 
+          width="396.8" height="676.8" 
+          rx="21.6" fill="none" 
+          stroke="rgba(200,200,200,0.3)" stroke-width="0.8"/>
+    
+    <!-- Écran -->
+    <rect x="220" y="141.6" width="360" height="510" 
+          rx="14.399999999999999" fill="#000000" opacity="0.95"/>
+    
+    <!-- Contenu de l'écran (simulation) -->
+    <rect x="256" y="218.1" 
+          width="288" height="204" 
+          rx="8" fill="#0a84ff" opacity="0.2"/>
+    <circle cx="400" cy="447.6" 
+            r="16" fill="#30d158"/>
+    
+    <!-- Encoche caméra frontale -->
+    <rect x="360" y="94" 
+          width="80" height="20.4" 
+          rx="6.4" fill="#1a1a1a"/>
+    <circle cx="400" cy="104.2" 
+            r="4.8" fill="rgba(255,255,255,0.3)"/>
+    
+    <!-- Boutons latéraux (visibles) -->
+    <rect x="192" y="264" 
+          width="12" height="102" 
+          rx="2.4" fill="rgba(200,200,200,0.5)"/>
+    <rect x="600" y="230" 
+          width="12" height="136" 
+          rx="2.4" fill="rgba(200,200,200,0.5)"/>
+  
+</svg>

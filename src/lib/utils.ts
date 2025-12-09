@@ -12,6 +12,30 @@ export function formatPrice(price: number): string {
   }).format(price);
 }
 
+/**
+ * Obtient l'image thumbnail d'un téléphone si disponible, sinon retourne l'image principale
+ */
+export function getThumbnailImage(phoneImage: string): string {
+  // Si l'image est dans /images/top5/, utiliser thumbnail.png
+  if (phoneImage.includes('/images/top5/')) {
+    return phoneImage.replace('/front.png', '/thumbnail.png');
+  }
+  // Sinon, retourner l'image principale
+  return phoneImage;
+}
+
+/**
+ * Obtient l'image OG (Open Graph) d'un téléphone si disponible
+ */
+export function getOGImage(phoneImage: string): string {
+  // Si l'image est dans /images/top5/, utiliser og-image.png
+  if (phoneImage.includes('/images/top5/')) {
+    return phoneImage.replace('/front.png', '/og-image.png');
+  }
+  // Sinon, utiliser l'image OG par défaut
+  return '/images/og-image.jpg';
+}
+
 export function calculateDiscount(originalPrice: number, currentPrice: number): number {
   return Math.round(((originalPrice - currentPrice) / originalPrice) * 100);
 }

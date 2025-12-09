@@ -5,6 +5,9 @@ interface ProductSchemaProps {
 }
 
 export default function ProductSchema({ phone }: ProductSchemaProps) {
+  const baseUrl = 'https://top5telephones.fr';
+  const productUrl = `${baseUrl}/fiche/${phone.slug}`;
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -13,14 +16,21 @@ export default function ProductSchema({ phone }: ProductSchemaProps) {
       "@type": "Brand",
       "name": phone.brand
     },
-    "description": `Découvrez le ${phone.name}, un smartphone ${phone.brand} avec ${phone.specs.screen}, ${phone.specs.camera}, ${phone.specs.storage} et ${phone.specs.battery}.`,
-    "image": phone.image,
+    "description": phone.description || `Découvrez le ${phone.name}, un smartphone ${phone.brand} avec ${phone.specs.screen}, ${phone.specs.camera}, ${phone.specs.storage} et ${phone.specs.battery}.`,
+    "image": phone.image.startsWith('http') ? phone.image : `${baseUrl}${phone.image}`,
+    "sku": phone.id,
+    "category": "Smartphone",
     "offers": {
       "@type": "Offer",
       "price": phone.price.toString(),
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": `https://top5telephones.fr/fiche/${phone.slug}`
+      "url": productUrl,
+      "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      "seller": {
+        "@type": "Organization",
+        "name": "Top 5 Téléphones"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -59,8 +69,17 @@ export default function ProductSchema({ phone }: ProductSchemaProps) {
         "@type": "PropertyValue",
         "name": "Batterie",
         "value": phone.specs.battery
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Système d'exploitation",
+        "value": phone.specs.os
       }
-    ]
+    ],
+    "manufacturer": {
+      "@type": "Brand",
+      "name": phone.brand
+    }
   };
 
   return (

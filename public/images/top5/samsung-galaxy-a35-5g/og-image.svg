@@ -1,0 +1,67 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  
+    <defs>
+      <linearGradient id="ogGrad-samsung-galaxy-a35-5g" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="630" fill="url(#ogGrad-samsung-galaxy-a35-5g)"/>
+    
+    
+    <!-- Ombre portée -->
+    <ellipse cx="189" cy="357.21" 
+             rx="75.60000000000001" ry="5.67" 
+             fill="rgba(0,0,0,0.15)" opacity="0.6"/>
+    
+    <!-- Corps du téléphone -->
+    <rect x="180" y="154.35" width="189" height="321.3" 
+          rx="11.34" fill="white" 
+          stroke="#1428A0" stroke-width="1.512" 
+          opacity="0.98"/>
+    
+    <!-- Bordure métallique -->
+    <rect x="95.256" y="29.105999999999995" 
+          width="187.488" height="319.788" 
+          rx="10.206" fill="none" 
+          stroke="rgba(200,200,200,0.3)" stroke-width="0.378"/>
+    
+    <!-- Écran -->
+    <rect x="103.95" y="66.90599999999999" width="170.1" height="240.97500000000002" 
+          rx="6.803999999999999" fill="#000000" opacity="0.95"/>
+    
+    <!-- Contenu de l'écran (simulation) -->
+    <rect x="120.96000000000001" y="103.05224999999999" 
+          width="136.08" height="96.39000000000001" 
+          rx="3.7800000000000002" fill="#0a84ff" opacity="0.2"/>
+    <circle cx="189" cy="211.49099999999999" 
+            r="7.5600000000000005" fill="#30d158"/>
+    
+    <!-- Encoche caméra frontale -->
+    <rect x="170.10000000000002" y="44.41499999999999" 
+          width="37.800000000000004" height="9.639" 
+          rx="3.024" fill="#0f172a"/>
+    <circle cx="189" cy="49.2345" 
+            r="2.2680000000000002" fill="rgba(255,255,255,0.3)"/>
+    
+    <!-- Boutons latéraux (visibles) -->
+    <rect x="90.72" y="124.74" 
+          width="5.67" height="48.195" 
+          rx="1.1340000000000001" fill="rgba(200,200,200,0.5)"/>
+    <rect x="283.5" y="108.675" 
+          width="5.67" height="64.26" 
+          rx="1.1340000000000001" fill="rgba(200,200,200,0.5)"/>
+  
+    
+    <!-- Texte à droite -->
+    <text x="780" y="220.5" 
+          font-family="Arial, sans-serif" font-size="42" 
+          fill="#1f2937" font-weight="bold">Samsung Galaxy A35 5G</text>
+    <text x="780" y="283.5" 
+          font-family="Arial, sans-serif" font-size="28" 
+          fill="#6b7280">Top 5 Smartphones 2025</text>
+    <text x="780" y="346.5" 
+          font-family="Arial, sans-serif" font-size="24" 
+          fill="#9ca3af">Meilleur rapport qualité-prix</text>
+  
+</svg>

@@ -3,97 +3,92 @@ import Image from 'next/image';
 import PhoneImageViewer from './PhoneImageViewer';
 
 export default function FicheImageSection({ phone, discount }: { phone: any, discount: number }) {
-  // Images Samsung Galaxy A14
-  if (phone.slug === "samsung-galaxy-a14") {
-    const samsungA14Images = [
-      { src: "/images/real/samsung-galaxy-a14/front.jpg", alt: "Vue avant Samsung Galaxy A14" },
-      { src: "/images/real/samsung-galaxy-a14/back.jpg", alt: "Vue arrière Samsung Galaxy A14" },
-      { src: "/images/real/samsung-galaxy-a14/side-one.jpg", alt: "Vue latérale 1 Samsung Galaxy A14" },
-      { src: "/images/real/samsung-galaxy-a14/side-two.jpg", alt: "Vue latérale 2 Samsung Galaxy A14" },
-      { src: "/images/real/samsung-galaxy-a14/font-back.jpg", alt: "Vue avant-arrière Samsung Galaxy A14" },
-      { src: "/images/real/samsung-galaxy-a14/turn.jpg", alt: "Vue rotation Samsung Galaxy A14" },
+  // Images Xiaomi Redmi Note 14 5G
+  if (phone.slug === "xiaomi-redmi-note-14-5g") {
+    const xiaomiRedmiNote14Images = [
+      { src: "/images/top5/xiaomi-redmi-note-14-5g/front.png", alt: "Vue avant Xiaomi Redmi Note 14 5G" },
+      { src: "/images/top5/xiaomi-redmi-note-14-5g/back.png", alt: "Vue arrière Xiaomi Redmi Note 14 5G" },
+      { src: "/images/top5/xiaomi-redmi-note-14-5g/side-left.png", alt: "Vue côté gauche Xiaomi Redmi Note 14 5G" },
+      { src: "/images/top5/xiaomi-redmi-note-14-5g/side-right.png", alt: "Vue côté droit Xiaomi Redmi Note 14 5G" },
+      { src: "/images/top5/xiaomi-redmi-note-14-5g/angle-3d.png", alt: "Vue perspective 3D Xiaomi Redmi Note 14 5G" },
     ];
 
     return (
       <section className="bg-white/80 dark:bg-neutral-800/60 py-6 px-4 rounded-2xl shadow-glass-light">
-        <PhoneImageViewer phoneSlug={phone.slug} images={samsungA14Images} />
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues réelles – Samsung Galaxy A14 noir</p>
+        <PhoneImageViewer phoneSlug={phone.slug} images={xiaomiRedmiNote14Images} />
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues professionnelles – Xiaomi Redmi Note 14 5G</p>
       </section>
     );
   }
 
-  // Images Xiaomi Redmi Note 12
-  if (phone.slug === "xiaomi-redmi-note-12") {
-    const xiaomiRedmiNote12Images = [
-      { src: "/images/real/Xiaomi Redmi Note 12/front.jpg", alt: "Vue avant Xiaomi Redmi Note 12" },
-      { src: "/images/real/Xiaomi Redmi Note 12/back.jpg", alt: "Vue arrière Xiaomi Redmi Note 12" },
-      { src: "/images/real/Xiaomi Redmi Note 12/left.jpg", alt: "Vue gauche Xiaomi Redmi Note 12" },
-      { src: "/images/real/Xiaomi Redmi Note 12/right.jpg", alt: "Vue droite Xiaomi Redmi Note 12" },
-      { src: "/images/real/Xiaomi Redmi Note 12/down.jpg", alt: "Vue bas Xiaomi Redmi Note 12" },
-      { src: "/images/real/Xiaomi Redmi Note 12/font-back.jpg", alt: "Vue avant-arrière Xiaomi Redmi Note 12" },
+  // Images Samsung Galaxy A35 5G
+  if (phone.slug === "samsung-galaxy-a35-5g") {
+    const samsungA35Images = [
+      { src: "/images/top5/samsung-galaxy-a35-5g/front.png", alt: "Vue avant Samsung Galaxy A35 5G" },
+      { src: "/images/top5/samsung-galaxy-a35-5g/back.png", alt: "Vue arrière Samsung Galaxy A35 5G" },
+      { src: "/images/top5/samsung-galaxy-a35-5g/side-left.png", alt: "Vue côté gauche Samsung Galaxy A35 5G" },
+      { src: "/images/top5/samsung-galaxy-a35-5g/side-right.png", alt: "Vue côté droit Samsung Galaxy A35 5G" },
+      { src: "/images/top5/samsung-galaxy-a35-5g/angle-3d.png", alt: "Vue perspective 3D Samsung Galaxy A35 5G" },
     ];
 
     return (
       <section className="bg-white/80 dark:bg-neutral-800/60 py-6 px-4 rounded-2xl shadow-glass-light">
-        <PhoneImageViewer phoneSlug={phone.slug} images={xiaomiRedmiNote12Images} />
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues réelles – Xiaomi Redmi Note 12</p>
+        <PhoneImageViewer phoneSlug={phone.slug} images={samsungA35Images} />
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues professionnelles – Samsung Galaxy A35 5G</p>
       </section>
     );
   }
 
-  // Images Motorola Moto G84
-  if (phone.slug === "motorola-moto-g84") {
-    const motorolaMotoG84Images = [
-      { src: "/images/real/Motorola Moto G84/front.jpg", alt: "Vue avant Motorola Moto G84" },
-      { src: "/images/real/Motorola Moto G84/back.jpg", alt: "Vue arrière Motorola Moto G84" },
-      { src: "/images/real/Motorola Moto G84/left.jpg", alt: "Vue gauche Motorola Moto G84" },
-      { src: "/images/real/Motorola Moto G84/right.jpg", alt: "Vue droite Motorola Moto G84" },
-      { src: "/images/real/Motorola Moto G84/front-turn.jpg", alt: "Vue avant rotation Motorola Moto G84" },
-      { src: "/images/real/Motorola Moto G84/back-turn.jpg", alt: "Vue arrière rotation Motorola Moto G84" },
+  // Images Poco X7 Pro
+  if (phone.slug === "poco-x7-pro") {
+    const pocoX7ProImages = [
+      { src: "/images/top5/poco-x7-pro/front.png", alt: "Vue avant Poco X7 Pro" },
+      { src: "/images/top5/poco-x7-pro/back.png", alt: "Vue arrière Poco X7 Pro" },
+      { src: "/images/top5/poco-x7-pro/side-left.png", alt: "Vue côté gauche Poco X7 Pro" },
+      { src: "/images/top5/poco-x7-pro/side-right.png", alt: "Vue côté droit Poco X7 Pro" },
+      { src: "/images/top5/poco-x7-pro/angle-3d.png", alt: "Vue perspective 3D Poco X7 Pro" },
     ];
 
     return (
       <section className="bg-white/80 dark:bg-neutral-800/60 py-6 px-4 rounded-2xl shadow-glass-light">
-        <PhoneImageViewer phoneSlug={phone.slug} images={motorolaMotoG84Images} />
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues réelles – Motorola Moto G84</p>
+        <PhoneImageViewer phoneSlug={phone.slug} images={pocoX7ProImages} />
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues professionnelles – Poco X7 Pro</p>
       </section>
     );
   }
 
-  // Images Realme 10
-  if (phone.slug === "realme-10") {
-    const realme10Images = [
-      { src: "/images/real/Realme 10/front.jpg", alt: "Vue avant Realme 10" },
-      { src: "/images/real/Realme 10/back.jpg", alt: "Vue arrière Realme 10" },
-      { src: "/images/real/Realme 10/front-back.jpg", alt: "Vue avant-arrière Realme 10" },
-      { src: "/images/real/Realme 10/left-right.jpg", alt: "Vue gauche-droite Realme 10" },
-      { src: "/images/real/Realme 10/turn.jpg", alt: "Vue rotation Realme 10" },
-      { src: "/images/real/Realme 10/up-down.jpg", alt: "Vue haut-bas Realme 10" },
+  // Images Motorola Edge 50 Fusion
+  if (phone.slug === "motorola-edge-50-fusion") {
+    const motorolaEdge50Images = [
+      { src: "/images/top5/motorola-edge-50-fusion/front.png", alt: "Vue avant Motorola Edge 50 Fusion" },
+      { src: "/images/top5/motorola-edge-50-fusion/back.png", alt: "Vue arrière Motorola Edge 50 Fusion" },
+      { src: "/images/top5/motorola-edge-50-fusion/side-left.png", alt: "Vue côté gauche Motorola Edge 50 Fusion" },
+      { src: "/images/top5/motorola-edge-50-fusion/side-right.png", alt: "Vue côté droit Motorola Edge 50 Fusion" },
+      { src: "/images/top5/motorola-edge-50-fusion/angle-3d.png", alt: "Vue perspective 3D Motorola Edge 50 Fusion" },
     ];
 
     return (
       <section className="bg-white/80 dark:bg-neutral-800/60 py-6 px-4 rounded-2xl shadow-glass-light">
-        <PhoneImageViewer phoneSlug={phone.slug} images={realme10Images} />
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues réelles – Realme 10</p>
+        <PhoneImageViewer phoneSlug={phone.slug} images={motorolaEdge50Images} />
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues professionnelles – Motorola Edge 50 Fusion</p>
       </section>
     );
   }
 
-  // Images Nokia G60
-  if (phone.slug === "nokia-g60") {
-    const nokiaG60Images = [
-      { src: "/images/real/Nokia G60/front-back-one.jpg", alt: "Vue avant-arrière 1 Nokia G60" },
-      { src: "/images/real/Nokia G60/front-back-two.jpg", alt: "Vue avant-arrière 2 Nokia G60" },
-      { src: "/images/real/Nokia G60/left.jpg", alt: "Vue gauche Nokia G60" },
-      { src: "/images/real/Nokia G60/right.jpg", alt: "Vue droite Nokia G60" },
-      { src: "/images/real/Nokia G60/back.jpg", alt: "Vue arrière Nokia G60" },
-      { src: "/images/real/Nokia G60/turn.jpg", alt: "Vue rotation Nokia G60" },
+  // Images Samsung Galaxy A26 5G
+  if (phone.slug === "samsung-galaxy-a26-5g") {
+    const samsungA26Images = [
+      { src: "/images/top5/samsung-galaxy-a26-5g/front.png", alt: "Vue avant Samsung Galaxy A26 5G" },
+      { src: "/images/top5/samsung-galaxy-a26-5g/back.png", alt: "Vue arrière Samsung Galaxy A26 5G" },
+      { src: "/images/top5/samsung-galaxy-a26-5g/side-left.png", alt: "Vue côté gauche Samsung Galaxy A26 5G" },
+      { src: "/images/top5/samsung-galaxy-a26-5g/side-right.png", alt: "Vue côté droit Samsung Galaxy A26 5G" },
+      { src: "/images/top5/samsung-galaxy-a26-5g/angle-3d.png", alt: "Vue perspective 3D Samsung Galaxy A26 5G" },
     ];
 
     return (
       <section className="bg-white/80 dark:bg-neutral-800/60 py-6 px-4 rounded-2xl shadow-glass-light">
-        <PhoneImageViewer phoneSlug={phone.slug} images={nokiaG60Images} />
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues réelles – Nokia G60</p>
+        <PhoneImageViewer phoneSlug={phone.slug} images={samsungA26Images} />
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">Vues professionnelles – Samsung Galaxy A26 5G</p>
       </section>
     );
   }

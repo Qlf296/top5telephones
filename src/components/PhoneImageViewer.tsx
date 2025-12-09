@@ -59,6 +59,8 @@ export default function PhoneImageViewer({ phoneSlug, images }: PhoneImageViewer
   };
 
   // Keyboard navigation
+  // Navigation clavier : dépendances volontairement limitées, prev/next sont stables
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (isZoomed) {

@@ -1,0 +1,31 @@
+# Fichiers à ignorer lors du déploiement Vercel
+
+# Documentation (optionnel - peut être déployé)
+# *.md
+
+# Scripts de développement
+scripts/generate-*.js
+scripts/migrate-*.js
+scripts/test-*.js
+
+# Backend Strapi (si non utilisé en production)
+backend/
+
+# Fichiers de configuration locaux
+.env.local
+.env.development.local
+.env.test.local
+
+# Fichiers temporaires
+*.tmp
+*.temp
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+

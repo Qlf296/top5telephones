@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables */
+@import '../styles/apple-theme.css';
+
+/* Couleurs historiques conservées pour compatibilité */
 :root {
   --ios-blue-50: #eff6ff;
   --ios-blue-100: #dbeafe;
@@ -30,6 +32,10 @@
   
   body {
     @apply antialiased;
+    font-family: var(--ios-font);
+    background: var(--ios-bg);
+    color: #0f172a;
+    min-height: 100vh;
   }
   
   /* Prevent horizontal scroll on mobile */
@@ -38,52 +44,111 @@
     max-width: 100vw;
   }
   
-  /* Improve image rendering */
+  /* Improve image rendering and prevent CLS */
   img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    max-width: 100%;
+    height: auto;
+    /* Prévenir le CLS en réservant l'espace */
+    /* aspect-ratio supporté nativement dans les navigateurs modernes */
+    /* Fallback pour anciens navigateurs : Next.js Image gère automatiquement */
+  }
+  
+  /* Prevent layout shift for images */
+  img[loading="lazy"] {
+    content-visibility: auto;
+  }
+  
+  /* Optimisation pour le LCP - précharger les ressources critiques */
+  img[data-priority="true"] {
+    fetchpriority: high;
   }
 }
 
 @layer components {
   .glass-effect {
-    @apply bg-glass-white backdrop-blur-md border border-glass-light shadow-glass-light;
+    @apply backdrop-blur-2xl;
+    background: var(--ios-surface);
+    border: 1px solid var(--ios-border);
+    box-shadow: var(--ios-shadow-soft);
   }
   
   .glass-card {
-    @apply bg-glass-white backdrop-blur-md rounded-2xl p-6 shadow-glass-light border border-glass-light hover:shadow-glass transition-all duration-300 hover:-translate-y-1;
+    @apply p-6 md:p-8;
+    background: var(--ios-surface);
+    border-radius: var(--ios-radius-lg);
+    border: 1px solid var(--ios-border);
+    box-shadow: var(--ios-shadow-soft);
+    backdrop-filter: blur(var(--ios-blur));
+    -webkit-backdrop-filter: blur(var(--ios-blur));
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ios-shadow);
   }
   
   .glass-button {
-    @apply bg-ios-blue-500 hover:bg-ios-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 shadow-glass-light;
+    @apply inline-flex items-center justify-center gap-2 font-medium;
+    border-radius: 9999px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, var(--ios-primary) 0%, var(--ios-primary-strong) 100%);
+    color: #fff;
+    border: 1px solid #ffffff33;
+    box-shadow: 0 12px 28px rgba(10, 132, 255, 0.25);
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  }
+  
+  .glass-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(10, 132, 255, 0.28);
+  }
+  
+  .glass-button:active {
+    transform: translateY(0);
+    opacity: 0.9;
   }
   
   .glass-button-secondary {
-    @apply bg-white hover:bg-gray-50 text-ios-blue-600 border border-ios-blue-500 px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 font-medium;
+    border-radius: 9999px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #0f172a;
+    border: 1px solid var(--ios-border);
+    box-shadow: var(--ios-shadow-soft);
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  }
+  
+  .glass-button-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ios-shadow);
   }
   
   .shadow-glass {
-    box-shadow: var(--glass-shadow);
+    box-shadow: var(--ios-shadow);
   }
   
   .shadow-glass-light {
-    box-shadow: var(--glass-shadow-light);
+    box-shadow: var(--ios-shadow-soft);
   }
   
   .bg-glass-white {
-    background-color: var(--glass-white);
+    background-color: var(--ios-surface);
   }
   
   .bg-glass-light {
-    background-color: var(--glass-light);
+    background-color: rgba(255, 255, 255, 0.65);
   }
   
   .bg-glass-medium {
-    background-color: var(--glass-medium);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   
   .border-glass-light {
-    border-color: var(--glass-light);
+    border-color: var(--ios-border);
   }
   
   /* Image container styles */

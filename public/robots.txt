@@ -12,12 +12,14 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
+Disallow: /test/
 
 # Permettre l'indexation des pages importantes
 Allow: /top-5-smartphones-300euros
 Allow: /comparateur
 Allow: /guide-achat-smartphone
 Allow: /comparatif-samsung-xiaomi
-Allow: /test-samsung-a14
-Allow: /test-xiaomi-note-12
 Allow: /fiche/ 
+Allow: /quiz
+Allow: /a-propos
+Allow: /contact 

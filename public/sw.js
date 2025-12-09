@@ -1,6 +1,6 @@
-const CACHE_NAME = 'top5telephones-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+const CACHE_NAME = 'top5telephones-v2';
+const STATIC_CACHE = 'static-v2';
+const DYNAMIC_CACHE = 'dynamic-v2';
 
 const urlsToCache = [
   '/',
@@ -10,8 +10,8 @@ const urlsToCache = [
   '/contact',
   '/politique-confidentialite',
   '/mentions-legales',
-  '/static/css/globals.css',
-  '/static/js/main.js',
+  '/manifest.json',
+  '/robots.txt',
   '/images/icon-192.png',
   '/images/icon-512.png',
   '/images/icon-comparator.svg',

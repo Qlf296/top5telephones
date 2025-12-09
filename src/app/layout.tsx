@@ -1,14 +1,35 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
+import dynamic from 'next/dynamic'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import PerformanceMonitor from '@/components/PerformanceMonitor'
-import Breadcrumbs from '@/components/Breadcrumbs'
-import ErrorBoundary from '@/components/ErrorBoundary'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import ClientPerformanceMonitor from '@/components/ClientPerformanceMonitor'
 
-const inter = Inter({ subsets: ['latin'] })
+// Imports dynamiques pour améliorer le code splitting et le LCP
+const Header = dynamic(() => import('@/components/Header'), {
+  ssr: true, // Garder SSR pour le SEO
+})
+const Footer = dynamic(() => import('@/components/Footer'), {
+  ssr: true,
+})
+const Breadcrumbs = dynamic(() => import('@/components/Breadcrumbs'), {
+  ssr: true,
+})
+const ErrorBoundary = dynamic(() => import('@/components/ErrorBoundary'), {
+  ssr: true,
+})
+const PageShell = dynamic(() => import('@/components/core/PageShell').then(mod => ({ default: mod.PageShell })), {
+  ssr: true,
+})
+// PerformanceMonitor sera importé directement dans le body
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -21,11 +42,11 @@ export const metadata: Metadata = {
     'meilleur téléphone pas cher',
     'comparatif smartphone',
     'test smartphone',
-    'samsung galaxy a14',
-    'xiaomi redmi note 12',
-    'motorola moto g84',
-    'nokia g60',
-    'realme 10',
+    'xiaomi redmi note 14 5g',
+    'samsung galaxy a35 5g',
+    'poco x7 pro',
+    'motorola edge 50 fusion',
+    'samsung galaxy a26 5g',
     'smartphone pas cher 2024',
     'guide achat smartphone',
     'comparatif samsung xiaomi'
@@ -77,7 +98,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
   category: 'technology',
   classification: 'Smartphones et téléphonie mobile',
@@ -107,9 +128,14 @@ export default function RootLayout({
         {/* DNS prefetch pour les domaines externes */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.clarity.ms" />
         
         {/* Preload des ressources critiques */}
-        <link rel="preload" href="/images/hero-bg.jpg" as="image" />
+        <link rel="preload" href="/images/og-image.jpg" as="image" type="image/jpeg" />
+        
+        {/* Resource hints pour améliorer le LCP */}
+        <link rel="prefetch" href="/comparateur" />
+        <link rel="prefetch" href="/quiz" />
         
         {/* Structured Data pour le site */}
         <script
@@ -135,55 +161,59 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        <PerformanceMonitor />
+      <body className={`${inter.className} ${inter.variable} antialiased`}>
+        <ClientPerformanceMonitor />
         <ErrorBoundary>
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">
+              <PageShell>
               <Breadcrumbs />
               {children}
+              </PageShell>
             </main>
             <Footer />
           </div>
         </ErrorBoundary>
         
-        {/* Google Analytics 4 - Configuration prête */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
+        
+        {/* Google Analytics 4 - Chargement différé pour améliorer les performances */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX', {
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
                 page_title: document.title,
                 page_location: window.location.href,
                 anonymize_ip: true,
                 cookie_flags: 'SameSite=None;Secure'
               });
-            `,
-          }}
-        />
+              `}
+            </Script>
+          </>
+        )}
         
-        {/* Microsoft Clarity - Configuration prête */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {/* Microsoft Clarity - Chargement différé */}
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`
               (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-            `,
-          }}
-        />
-        
-        {/* Vercel Speed Insights */}
-        <SpeedInsights />
+              })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+            `}
+          </Script>
+        )}
       </body>
     </html>
   )

@@ -30,183 +30,188 @@ export interface Phone {
 export const phones: Phone[] = [
   {
     id: "1",
-    name: "Samsung Galaxy A14",
-    brand: "Samsung",
-    price: 189,
-    originalPrice: 229,
-    image: "/images/real/samsung-galaxy-a14/front.jpg",
-    specs: {
-      screen: "6.6\" FHD+ PLS LCD",
-      processor: "Exynos 850",
-      ram: "4GB",
-      storage: "128GB",
-      camera: "50MP + 5MP + 2MP",
-      battery: "5000mAh",
-      os: "Android 13"
-    },
-    pros: [
-      "Excellent rapport qualité-prix",
-      "Batterie longue durée",
-      "Écran de bonne qualité",
-      "Design moderne"
-    ],
-    cons: [
-      "Performance limitée",
-      "Pas de charge rapide",
-      "Caméra moyenne en faible luminosité"
-    ],
-    affiliateLinks: {
-      amazon: "https://www.amazon.fr/dp/B0BSGQ1Y1Q?tag=top5telephones-21",
-      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/samsung-galaxy-a14-128go-noir/f-1070901-sam1103860.html"
-    },
-    rating: 4.2,
-    slug: "samsung-galaxy-a14",
-    description: "Le Samsung Galaxy A14 offre un excellent rapport qualité-prix avec un écran de 6.6 pouces, une batterie de 5000mAh et un design moderne. Parfait pour un usage quotidien.",
-    lastUpdated: "2024-01-15"
-  },
-  {
-    id: "2",
-    name: "Xiaomi Redmi Note 12",
+    name: "Xiaomi Redmi Note 14 5G",
     brand: "Xiaomi",
-    price: 249,
+    price: 260,
     originalPrice: 299,
-    image: "/images/real/Xiaomi Redmi Note 12/front.jpg",
+    image: "/images/top5/xiaomi-redmi-note-14-5g/front.png",
     specs: {
-      screen: "6.67\" FHD+ AMOLED",
-      processor: "MediaTek Dimensity 1080",
+      screen: "6.67\" FHD+ AMOLED 120Hz",
+      processor: "Snapdragon 4 Gen 2",
       ram: "6GB",
       storage: "128GB",
       camera: "50MP + 8MP + 2MP",
       battery: "5000mAh",
-      os: "Android 12 (MIUI 13)"
+      os: "Android 14 (MIUI 15)"
     },
     pros: [
-      "Écran AMOLED de qualité",
-      "Performance fluide",
+      "5G intégré",
+      "Écran AMOLED 120Hz fluide",
       "Charge rapide 33W",
-      "Caméra 50MP"
+      "Caméra 50MP performante",
+      "Excellent rapport qualité-prix"
     ],
     cons: [
       "MIUI peut être intrusif",
-      "Pas de protection IP",
+      "Pas de protection IP certifiée",
       "Haut-parleur mono"
     ],
     affiliateLinks: {
-      amazon: "https://www.amazon.fr/dp/B0BQJ8XZ6K?tag=top5telephones-21",
-      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/xiaomi-redmi-note-12-128go-6gb-ram/f-1070901-xia1103861.html"
+      amazon: "https://www.amazon.fr/dp/B0D8JQZ6K?tag=top5telephones-21",
+      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/xiaomi-redmi-note-14-5g-128go/f-1070901-xia1105001.html"
     },
-    rating: 4.4,
-    slug: "xiaomi-redmi-note-12",
-    description: "Le Xiaomi Redmi Note 12 combine un écran AMOLED de qualité avec des performances solides et une charge rapide. Un excellent choix dans cette gamme de prix.",
-    lastUpdated: "2024-01-15"
+    rating: 4.5,
+    slug: "xiaomi-redmi-note-14-5g",
+    description: "Le Xiaomi Redmi Note 14 5G allie un écran AMOLED 120Hz, la 5G et des performances solides. Le meilleur choix dans cette gamme de prix en 2025.",
+    lastUpdated: "2025-01-20"
   },
   {
-    id: "3",
-    name: "Motorola Moto G84",
-    brand: "Motorola",
-    price: 279,
+    id: "2",
+    name: "Samsung Galaxy A35 5G",
+    brand: "Samsung",
+    price: 290,
     originalPrice: 329,
-    image: "/images/real/Motorola Moto G84/front.jpg",
+    image: "/images/top5/samsung-galaxy-a35-5g/front.png",
     specs: {
-      screen: "6.55\" FHD+ pOLED",
-      processor: "Snapdragon 695",
-      ram: "8GB",
-      storage: "256GB",
-      camera: "50MP + 8MP",
+      screen: "6.6\" FHD+ Super AMOLED 120Hz",
+      processor: "Exynos 1380",
+      ram: "6GB",
+      storage: "128GB",
+      camera: "50MP + 8MP + 5MP",
       battery: "5000mAh",
-      os: "Android 13"
+      os: "Android 14 (One UI 6.1)"
     },
     pros: [
-      "Stockage généreux (256GB)",
-      "Android pur",
-      "Design premium",
-      "Bonne autonomie"
+      "5G intégré",
+      "Écran Super AMOLED 120Hz premium",
+      "Caméra 50MP avec OIS",
+      "Garantie Samsung 2 ans",
+      "Mises à jour Android longues"
     ],
     cons: [
       "Prix plus élevé",
-      "Pas de charge sans fil",
-      "Caméra ultra-wide limitée"
+      "Performance limitée en gaming intensif",
+      "Charge rapide 25W seulement"
     ],
     affiliateLinks: {
-      amazon: "https://www.amazon.fr/dp/B0C8JQZ6K?tag=top5telephones-21",
-      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/motorola-moto-g84-256go-8gb-ram/f-1070901-mot1103862.html"
+      amazon: "https://www.amazon.fr/dp/B0D8JQZ6L?tag=top5telephones-21",
+      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/samsung-galaxy-a35-5g-128go/f-1070901-sam1105002.html"
     },
-    rating: 4.3,
-    slug: "motorola-moto-g84",
-    description: "Le Motorola Moto G84 propose un stockage généreux de 256GB avec Android pur et un design premium. Idéal pour ceux qui veulent de l'espace de stockage.",
-    lastUpdated: "2024-01-15"
+    rating: 4.4,
+    slug: "samsung-galaxy-a35-5g",
+    description: "Le Samsung Galaxy A35 5G offre un écran Super AMOLED 120Hz premium, une caméra 50MP avec stabilisation optique et la garantie Samsung. Un excellent choix pour la fiabilité.",
+    lastUpdated: "2025-01-20"
+  },
+  {
+    id: "3",
+    name: "Poco X7 Pro",
+    brand: "Poco",
+    price: 280,
+    originalPrice: 329,
+    image: "/images/top5/poco-x7-pro/front.png",
+    specs: {
+      screen: "6.67\" FHD+ AMOLED 120Hz",
+      processor: "MediaTek Dimensity 8300 Ultra",
+      ram: "8GB",
+      storage: "128GB",
+      camera: "64MP + 8MP + 2MP",
+      battery: "5000mAh",
+      os: "Android 14 (MIUI 15)"
+    },
+    pros: [
+      "5G intégré",
+      "Processeur puissant (Dimensity 8300 Ultra)",
+      "Caméra 64MP haute résolution",
+      "Charge rapide 67W ultra-rapide",
+      "Performance gaming excellente"
+    ],
+    cons: [
+      "MIUI peut être lourd",
+      "Pas de protection IP",
+      "Design moins premium"
+    ],
+    affiliateLinks: {
+      amazon: "https://www.amazon.fr/dp/B0D8JQZ6M?tag=top5telephones-21",
+      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/poco-x7-pro-128go/f-1070901-poc1105003.html"
+    },
+    rating: 4.6,
+    slug: "poco-x7-pro",
+    description: "Le Poco X7 Pro combine un processeur MediaTek Dimensity 8300 Ultra puissant, une caméra 64MP et une charge ultra-rapide 67W. Idéal pour le gaming et les performances.",
+    lastUpdated: "2025-01-20"
   },
   {
     id: "4",
-    name: "Nokia G60",
-    brand: "Nokia",
-    price: 229,
-    originalPrice: 269,
-    image: "/images/real/Nokia G60/front-back-one.jpg",
+    name: "Motorola Edge 50 Fusion",
+    brand: "Motorola",
+    price: 295,
+    originalPrice: 349,
+    image: "/images/top5/motorola-edge-50-fusion/front.png",
     specs: {
-      screen: "6.58\" FHD+ LCD",
-      processor: "Snapdragon 695",
-      ram: "6GB",
+      screen: "6.7\" FHD+ pOLED 144Hz",
+      processor: "Snapdragon 7s Gen 3",
+      ram: "8GB",
       storage: "128GB",
-      camera: "50MP + 5MP + 2MP",
-      battery: "4500mAh",
-      os: "Android 12"
+      camera: "50MP + 13MP",
+      battery: "5000mAh",
+      os: "Android 14"
     },
     pros: [
-      "Android One (mises à jour rapides)",
-      "Construction solide",
-      "Bonne autonomie",
-      "Design durable"
+      "5G intégré",
+      "Écran pOLED 144Hz premium",
+      "Android pur sans surcouche",
+      "Design premium et élégant",
+      "Charge rapide 68W"
     ],
     cons: [
-      "Écran LCD basique",
-      "Batterie plus petite",
-      "Performance moyenne"
+      "Prix proche de la limite (295€)",
+      "Stockage 128GB seulement",
+      "Caméra ultra-wide basique"
     ],
     affiliateLinks: {
-      amazon: "https://www.amazon.fr/dp/B0BQJ8XZ6L?tag=top5telephones-21",
-      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/nokia-g60-128go-6gb-ram/f-1070901-nok1103863.html"
+      amazon: "https://www.amazon.fr/dp/B0D8JQZ6N?tag=top5telephones-21",
+      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/motorola-edge-50-fusion-128go/f-1070901-mot1105004.html"
     },
-    rating: 4.1,
-    slug: "nokia-g60",
-    description: "Le Nokia G60 bénéficie du programme Android One pour des mises à jour rapides et une construction solide. Parfait pour ceux qui privilégient la durabilité.",
-    lastUpdated: "2024-01-15"
+    rating: 4.5,
+    slug: "motorola-edge-50-fusion",
+    description: "Le Motorola Edge 50 Fusion offre un écran pOLED 144Hz premium, Android pur et un design élégant. Le meilleur choix pour ceux qui privilégient l'expérience utilisateur pure.",
+    lastUpdated: "2025-01-20"
   },
   {
     id: "5",
-    name: "Realme 10",
-    brand: "Realme",
-    price: 259,
+    name: "Samsung Galaxy A26 5G",
+    brand: "Samsung",
+    price: 270,
     originalPrice: 299,
-    image: "/images/real/Realme 10/front.jpg",
+    image: "/images/top5/samsung-galaxy-a26-5g/front.png",
     specs: {
-      screen: "6.4\" FHD+ Super AMOLED",
-      processor: "MediaTek Dimensity 1080",
-      ram: "8GB",
+      screen: "6.5\" FHD+ Super AMOLED",
+      processor: "Exynos 1280",
+      ram: "6GB",
       storage: "128GB",
-      camera: "50MP + 2MP + 2MP",
+      camera: "50MP + 8MP + 2MP",
       battery: "5000mAh",
-      os: "Android 12 (Realme UI 4.0)"
+      os: "Android 14 (One UI 6.1)"
     },
     pros: [
-      "Écran Super AMOLED",
-      "Performance fluide",
-      "Charge rapide 33W",
-      "Design élégant"
+      "5G intégré",
+      "Écran Super AMOLED de qualité",
+      "Garantie Samsung 2 ans",
+      "Mises à jour Android longues",
+      "Bonne autonomie"
     ],
     cons: [
-      "Realme UI peut être lourd",
-      "Caméra ultra-wide basique",
-      "Pas de protection IP"
+      "Performance limitée",
+      "Charge rapide 25W seulement",
+      "Caméra moyenne en faible luminosité"
     ],
     affiliateLinks: {
-      amazon: "https://www.amazon.fr/dp/B0BQJ8XZ6M?tag=top5telephones-21",
-      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/realme-10-128go-8gb-ram/f-1070901-rea1103864.html"
+      amazon: "https://www.amazon.fr/dp/B0D8JQZ6O?tag=top5telephones-21",
+      cdiscount: "https://www.cdiscount.com/telephonie/telephone-portable/samsung-galaxy-a26-5g-128go/f-1070901-sam1105005.html"
     },
-    rating: 4.2,
-    slug: "realme-10",
-    description: "Le Realme 10 offre un écran Super AMOLED de qualité avec des performances solides et un design élégant. Un excellent rapport qualité-prix.",
-    lastUpdated: "2024-01-15"
+    rating: 4.3,
+    slug: "samsung-galaxy-a26-5g",
+    description: "Le Samsung Galaxy A26 5G combine un écran Super AMOLED de qualité, la 5G et la fiabilité Samsung avec garantie 2 ans. Un excellent choix pour la longévité.",
+    lastUpdated: "2025-01-20"
   }
 ];
 

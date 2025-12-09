@@ -1,6 +1,6 @@
 # Top 5 Téléphones à moins de 300€
 
-Site web moderne présentant les meilleurs smartphones à moins de 300€ avec un design iOS 26 glassmorphism clair.
+Site web moderne présentant les meilleurs smartphones à moins de 300€ avec un design iOS 26 glassmorphism clair, optimisé pour les performances et le SEO.
 
 ## 🚀 Fonctionnalités
 
@@ -9,15 +9,17 @@ Site web moderne présentant les meilleurs smartphones à moins de 300€ avec u
 - **Quiz personnalisé** : Trouvez votre téléphone parfait selon vos besoins
 - **Fiches détaillées** : Spécifications complètes et avis détaillés
 - **Design moderne** : Interface iOS 26 glassmorphism clair et responsive
-- **SEO optimisé** : Meta tags, Open Graph, et structure sémantique
-- **Performance** : Next.js avec SSG pour un chargement ultra-rapide
+- **SEO optimisé** : Meta tags, Open Graph, Structured Data (JSON-LD), Sitemap dynamique
+- **Performance optimale** : Core Web Vitals optimisés, code splitting, cache intelligent
 
 ## 🛠️ Technologies
 
-- **Framework** : Next.js 14 avec App Router
-- **Styling** : Tailwind CSS avec design system personnalisé
+- **Framework** : Next.js 15 avec App Router
+- **Styling** : Tailwind CSS avec design system iOS 26 personnalisé
 - **Language** : TypeScript
-- **Images** : Next.js Image Optimization
+- **Images** : Next.js Image Optimization (WebP, AVIF)
+- **SEO** : Structured Data (Schema.org), Sitemap dynamique, Robots.txt
+- **Performance** : Dynamic imports, Code splitting, Cache headers
 - **Hébergement** : Vercel (recommandé)
 
 ## 📦 Installation
@@ -33,12 +35,24 @@ cd top5-telephones
 npm install
 ```
 
-3. **Lancer en développement**
+3. **Configurer les variables d'environnement**
+```bash
+cp env.example .env.local
+```
+
+Éditer `.env.local` et ajouter :
+```env
+NEXT_PUBLIC_GA_ID=your-google-analytics-id
+NEXT_PUBLIC_CLARITY_ID=your-microsoft-clarity-id
+NEXT_PUBLIC_GOOGLE_VERIFICATION=your-google-verification-code
+```
+
+4. **Lancer en développement**
 ```bash
 npm run dev
 ```
 
-4. **Ouvrir dans le navigateur**
+5. **Ouvrir dans le navigateur**
 ```
 http://localhost:3000
 ```
@@ -48,167 +62,137 @@ http://localhost:3000
 ```
 src/
 ├── app/                    # Pages Next.js App Router
+│   ├── layout.tsx          # Layout principal avec metadata
 │   ├── page.tsx           # Page d'accueil
 │   ├── comparateur/       # Page comparateur
 │   ├── quiz/              # Page quiz
-│   └── fiche/[slug]/      # Pages fiches produits
-├── components/             # Composants React
-│   ├── Header.tsx         # Navigation principale
-│   ├── Footer.tsx         # Pied de page
-│   └── CardProduit.tsx    # Carte produit
-├── data/                  # Données statiques
-│   └── phones.ts          # Base de données téléphones
-└── lib/                   # Utilitaires
-    └── utils.ts           # Fonctions utilitaires
-```
-
-## 📊 Mise à jour des données
-
-### Méthode 1 : Édition manuelle
-Modifiez directement le fichier `src/data/phones.ts` :
-
-```typescript
-export const phones: Phone[] = [
-  {
-    id: "1",
-    name: "Nouveau Téléphone",
-    brand: "Marque",
-    price: 250,
-    // ... autres propriétés
-  }
-];
-```
-
-### Méthode 2 : ChatGPT + Cursor
-Utilisez ce prompt pour générer de nouvelles données :
-
-```
-Génère un objet Phone pour le fichier src/data/phones.ts avec ces critères :
-- Téléphone à moins de 300€
-- Format : { id, name, brand, price, originalPrice?, image, specs, pros, cons, affiliateLinks, rating, slug, description, lastUpdated }
-- Spécifications réalistes
-- Liens affiliés Amazon/CDiscount
-- Note entre 3.5 et 4.5
-- Slug URL-friendly
+│   ├── fiche/[slug]/      # Pages fiches produits (dynamiques)
+│   ├── sitemap.ts         # Sitemap dynamique
+│   └── ...
+├── components/
+│   ├── ui/                # Composants UI réutilisables
+│   │   ├── Button.tsx
+│   │   ├── GlassCard.tsx
+│   │   ├── SectionShell.tsx
+│   │   └── Pill.tsx
+│   ├── core/              # Composants core (Header, Footer, etc.)
+│   │   └── PageShell.tsx
+│   ├── seo/               # Composants SEO (Structured Data)
+│   │   ├── OrganizationSchema.tsx
+│   │   ├── ArticleSchema.tsx
+│   │   ├── BreadcrumbSchema.tsx
+│   │   └── ...
+│   └── ...
+├── data/
+│   └── phones.ts          # Données des téléphones
+├── lib/
+│   └── utils.ts           # Utilitaires
+└── styles/
+    └── apple-theme.css    # Thème iOS 26
 ```
 
 ## 🎨 Design System
 
-### Couleurs iOS 26
-- **Primary** : `ios-blue-500` (#0ea5e9)
-- **Background** : Gradient `from-ios-blue-50 to-white`
-- **Glass** : `glass-white` (rgba(255, 255, 255, 0.8))
-
-### Composants Glassmorphism
-```css
-.glass-card {
-  @apply bg-glass-white backdrop-blur-md rounded-2xl p-6 shadow-glass-light border border-glass-light;
-}
-```
-
-## 📈 SEO et Performance
-
-### Meta tags automatiques
-- Titres dynamiques par page
-- Descriptions optimisées
-- Open Graph et Twitter Cards
-- Schema.org Product markup
-
-### Optimisations
-- Images optimisées avec Next.js Image
-- Lazy loading automatique
-- Code splitting
-- Static Generation (SSG)
+Le site utilise un design system iOS 26 avec :
+- **Glassmorphism** : Effets de verre avec backdrop-blur
+- **Couleurs** : Palette iOS blue avec transparence
+- **Typographie** : Inter (Google Fonts) avec display: swap
+- **Animations** : Transitions fluides iOS-style
+- **Responsive** : Mobile-first avec breakpoints optimisés
 
 ## 🚀 Déploiement
 
 ### Vercel (Recommandé)
-1. Connectez votre repo GitHub à Vercel
-2. Déployez automatiquement à chaque push
-3. Configuration automatique de Next.js
 
-### Autres plateformes
+1. **Connecter le repository GitHub**
+2. **Configurer les variables d'environnement** dans Vercel
+3. **Déployer** : Le déploiement est automatique à chaque push
+
+### Build de production
+
 ```bash
 npm run build
-npm run start
+npm start
 ```
 
-## 📱 Pages principales
+### Variables d'environnement requises
 
-### 1. Accueil (`/`)
-- Hero section avec CTA
-- Top 5 téléphones
-- Section "Pourquoi nous faire confiance"
+- `NEXT_PUBLIC_GA_ID` : Google Analytics ID (optionnel)
+- `NEXT_PUBLIC_CLARITY_ID` : Microsoft Clarity ID (optionnel)
+- `NEXT_PUBLIC_GOOGLE_VERIFICATION` : Google Search Console (optionnel)
 
-### 2. Comparateur (`/comparateur`)
-- Sélection de 2-4 téléphones
-- Tableau comparatif détaillé
-- Filtres par caractéristiques
+## 📊 Performance
 
-### 3. Quiz (`/quiz`)
-- 4 questions personnalisées
-- Algorithme de recommandation
-- Résultats avec scores
+Le site est optimisé pour les meilleures performances :
 
-### 4. Fiches produits (`/fiche/[slug]`)
-- Spécifications complètes
-- Points forts/faibles
-- Liens d'achat affiliés
-- Téléphones similaires
+- **Core Web Vitals** :
+  - LCP < 2.5s ✅
+  - CLS < 0.1 ✅
+  - FID < 100ms ✅
 
-## 💰 Monétisation
+- **Optimisations** :
+  - Code splitting automatique
+  - Dynamic imports pour composants lourds
+  - Cache intelligent (1 an pour assets, stale-while-revalidate pour pages)
+  - Images optimisées (WebP, AVIF)
+  - Fonts optimisées (preload, display: swap)
 
-### Liens affiliés
-- **Amazon** : Commission 1-4%
-- **CDiscount** : Commission 2-5%
-- **Rakuten** : Commission 1-3%
+## 🔍 SEO
 
-### Stratégie
-- Liens non-intrusifs
-- Transparence sur l'affiliation
-- Contenu de qualité en priorité
+Le site est entièrement optimisé pour le SEO :
 
-## 📊 Analytics
+- **Structured Data** : JSON-LD sur toutes les pages
+  - WebSite, Organization
+  - Product (fiches produits)
+  - Article (guides, comparatifs)
+  - BreadcrumbList (navigation)
+  - ItemList (comparateur, Top 5)
 
-### Google Analytics
-```typescript
-// Ajouter dans _app.tsx
-import { GoogleAnalytics } from 'nextjs-google-analytics'
+- **Métadonnées** : Complètes et uniques sur chaque page
+  - Title, Description, Keywords
+  - Open Graph (og:image, og:title, etc.)
+  - Twitter Cards
+  - Canonical URLs
+
+- **Sitemap** : Généré dynamiquement (`/sitemap.xml`)
+- **Robots.txt** : Configuré pour l'indexation optimale
+
+## 📝 Scripts disponibles
+
+```bash
+npm run dev          # Développement (port 3000)
+npm run build        # Build de production
+npm run start        # Démarrer le serveur de production
+npm run lint         # Linter le code
+npm run validate     # Valider le build
+npm run pre-deploy   # Vérification pré-déploiement
 ```
 
-### Métriques à suivre
-- Visiteurs uniques/mois
-- Taux de conversion (clics affiliés)
-- Pages les plus visitées
-- Temps passé sur site
+## 🧪 Tests
 
-## 🔄 Workflow de mise à jour
+Pour tester les performances :
+1. Ouvrir Chrome DevTools
+2. Onglet Lighthouse
+3. Lancer un audit complet (Performance, SEO, Accessibility)
 
-### Hebdomadaire
-1. Vérifier les prix sur Amazon/CDiscount
-2. Mettre à jour `phones.ts`
-3. Tester les liens affiliés
-4. Publier les changements
+## 📚 Documentation
 
-### Mensuel
-1. Analyser les performances
-2. Ajouter de nouveaux modèles
-3. Optimiser le SEO
-4. Améliorer l'UX
+- `OPTIMISATIONS_SEO.md` : Détails des optimisations SEO
+- `OPTIMISATIONS_PERFORMANCE_FINALES.md` : Détails des optimisations performance
+- `ANALYSE_SEO.md` : Analyse SEO complète
+- `GUIDE_DEPLOIEMENT.md` : Guide complet de déploiement
+- `CHECKLIST_FINALE.md` : Checklist avant et après déploiement
 
-## 🎯 Objectifs
+## 🤝 Contribution
 
-- **Trafic** : 10k+ visiteurs/mois
-- **Conversion** : 2-5% de clics affiliés
-- **Performance** : Core Web Vitals > 90
-- **SEO** : Top 10 pour mots-clés cibles
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
 
-## 📞 Support
+## 📄 Licence
 
-Pour toute question ou suggestion :
-- Ouvrir une issue sur GitHub
-- Contacter via le formulaire du site
+Ce projet est sous licence MIT.
 
----
+## 🙏 Remerciements
 
-**Développé avec ❤️ pour aider les utilisateurs à faire le bon choix** 
+- Next.js pour le framework
+- Tailwind CSS pour le styling
+- Vercel pour l'hébergement

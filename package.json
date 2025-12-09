@@ -4,9 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:full": "concurrently \"npm run dev\" \"npm run dev:strapi\"",
+    "dev:strapi": "cd backend && npm run develop",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate": "node scripts/validate-build.js",
+    "pre-deploy": "node scripts/pre-deploy-check.js",
+    "test:a11y": "node scripts/test-accessibility.js",
+    "test:links": "node scripts/test-links.js",
+    "test:all": "npm run test:a11y && npm run test:links",
+    "check:prices": "node scripts/check-prices.js",
+    "prebuild": "npm run validate",
+    "strapi:build": "cd backend && npm run build",
+    "strapi:start": "cd backend && npm run start"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
@@ -23,8 +34,12 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.11.0",
+    "concurrently": "^9.2.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "form-data": "^4.0.4",
+    "node-fetch": "^3.3.2",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
