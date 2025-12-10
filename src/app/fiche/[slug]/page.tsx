@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { getPhoneBySlug, getAllPhones } from '@/data/phones';
 import { formatPrice, calculateDiscount, generateStars, formatDate } from '@/lib/utils';
 import FicheImageSection from '@/components/FicheImageSection';
-import FicheImageSectionWithColor from '@/components/FicheImageSectionWithColor';
 import ProductSchema from '@/components/ProductSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { Button } from '@/components/ui/Button';
