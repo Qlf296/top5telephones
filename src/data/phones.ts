@@ -42,25 +42,41 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     price: 260,
     originalPrice: 299,
-    image: "/images/top5/xiaomi-redmi-note-14-5g/front.png",
+    image: "/images/top2/Xiaomi Redmi Note 14 5G.png",
     colors: [
-      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/xiaomi-redmi-note-14-5g/noir/front.png" },
-      { name: "Bleu", hex: "#0ea5e9", slug: "bleu", image: "/images/top5/xiaomi-redmi-note-14-5g/bleu/front.png" },
-      { name: "Vert", hex: "#10b981", slug: "vert", image: "/images/top5/xiaomi-redmi-note-14-5g/vert/front.png" },
+      { 
+        name: "Midnight Black", 
+        hex: "#0D0D0D", 
+        slug: "midnight-black", 
+        image: "/images/top5/xiaomi-redmi-note-14-5g/noir/front.png" 
+      },
+      { 
+        name: "Ocean Blue", 
+        hex: "#1E88E5", 
+        slug: "ocean-blue", 
+        image: "/images/top5/xiaomi-redmi-note-14-5g/bleu/front.png" 
+      },
+      { 
+        name: "Forest Green", 
+        hex: "#2E7D32", 
+        slug: "forest-green", 
+        image: "/images/top5/xiaomi-redmi-note-14-5g/vert/front.png" 
+      },
     ],
     specs: {
       screen: "6.67\" FHD+ AMOLED 120Hz",
-      processor: "Snapdragon 4 Gen 2",
+      processor: "MediaTek Dimensity 7025 Ultra",
       ram: "6GB",
       storage: "128GB",
       camera: "50MP + 8MP + 2MP",
-      battery: "5000mAh",
+      battery: "5110mAh",
       os: "Android 14 (MIUI 15)"
     },
     pros: [
       "5G intégré",
       "Écran AMOLED 120Hz fluide",
-      "Charge rapide 33W",
+      "Batterie 5110mAh",
+      "Charge rapide 45W",
       "Caméra 50MP performante",
       "Excellent rapport qualité-prix"
     ],
@@ -76,7 +92,7 @@ export const phones: Phone[] = [
     rating: 4.5,
     slug: "xiaomi-redmi-note-14-5g",
     description: "Le Xiaomi Redmi Note 14 5G allie un écran AMOLED 120Hz, la 5G et des performances solides. Le meilleur choix dans cette gamme de prix en 2025.",
-    lastUpdated: "2025-01-20"
+    lastUpdated: "2024-12-10"
   },
   {
     id: "2",
@@ -84,11 +100,32 @@ export const phones: Phone[] = [
     brand: "Samsung",
     price: 290,
     originalPrice: 329,
-    image: "/images/top5/samsung-galaxy-a35-5g/front.png",
+    image: "/images/top2/Samsung A35.png",
     colors: [
-      { name: "Noir", hex: "#0f172a", slug: "noir", image: "/images/top5/samsung-galaxy-a35-5g/noir/front.png" },
-      { name: "Bleu", hex: "#1428A0", slug: "bleu", image: "/images/top5/samsung-galaxy-a35-5g/bleu/front.png" },
-      { name: "Violet", hex: "#9333ea", slug: "violet", image: "/images/top5/samsung-galaxy-a35-5g/violet/front.png" },
+      { 
+        name: "Awesome Navy", 
+        hex: "#0A1929", 
+        slug: "awesome-navy", 
+        image: "/images/top5/samsung-galaxy-a35-5g/noir/front.png" 
+      },
+      { 
+        name: "Awesome Iceblue", 
+        hex: "#64B5F6", 
+        slug: "awesome-iceblue", 
+        image: "/images/top5/samsung-galaxy-a35-5g/bleu/front.png" 
+      },
+      { 
+        name: "Awesome Lilac", 
+        hex: "#BA68C8", 
+        slug: "awesome-lilac", 
+        image: "/images/top5/samsung-galaxy-a35-5g/violet/front.png" 
+      },
+      { 
+        name: "Awesome Lemon", 
+        hex: "#CDDC39", 
+        slug: "awesome-lemon", 
+        image: "/images/top5/samsung-galaxy-a35-5g/jaune/front.png" 
+      },
     ],
     specs: {
       screen: "6.6\" FHD+ Super AMOLED 120Hz",
@@ -118,7 +155,7 @@ export const phones: Phone[] = [
     rating: 4.4,
     slug: "samsung-galaxy-a35-5g",
     description: "Le Samsung Galaxy A35 5G offre un écran Super AMOLED 120Hz premium, une caméra 50MP avec stabilisation optique et la garantie Samsung. Un excellent choix pour la fiabilité.",
-    lastUpdated: "2025-01-20"
+    lastUpdated: "2024-12-10"
   },
   {
     id: "3",
@@ -126,26 +163,42 @@ export const phones: Phone[] = [
     brand: "Poco",
     price: 280,
     originalPrice: 329,
-    image: "/images/top5/poco-x7-pro/front.png",
+    image: "/images/top2/Poco X7 Pro.png",
     colors: [
-      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/poco-x7-pro/noir/front.png" },
-      { name: "Bleu", hex: "#3b82f6", slug: "bleu", image: "/images/top5/poco-x7-pro/bleu/front.png" },
-      { name: "Jaune", hex: "#fbbf24", slug: "jaune", image: "/images/top5/poco-x7-pro/jaune/front.png" },
+      { 
+        name: "Graphite Black", 
+        hex: "#212121", 
+        slug: "graphite-black", 
+        image: "/images/top5/poco-x7-pro/noir/front.png" 
+      },
+      { 
+        name: "Ocean Blue", 
+        hex: "#1976D2", 
+        slug: "ocean-blue", 
+        image: "/images/top5/poco-x7-pro/bleu/front.png" 
+      },
+      { 
+        name: "Sunset Orange", 
+        hex: "#FF6F00", 
+        slug: "sunset-orange", 
+        image: "/images/top5/poco-x7-pro/jaune/front.png" 
+      },
     ],
     specs: {
       screen: "6.67\" FHD+ AMOLED 120Hz",
-      processor: "MediaTek Dimensity 8300 Ultra",
+      processor: "MediaTek Dimensity 8400 Ultra",
       ram: "8GB",
       storage: "128GB",
-      camera: "64MP + 8MP + 2MP",
-      battery: "5000mAh",
+      camera: "50MP + 8MP",
+      battery: "6000mAh",
       os: "Android 14 (MIUI 15)"
     },
     pros: [
       "5G intégré",
       "Processeur puissant (Dimensity 8300 Ultra)",
-      "Caméra 64MP haute résolution",
-      "Charge rapide 67W ultra-rapide",
+      "Batterie 6000mAh",
+      "Caméra 50MP haute résolution",
+      "Charge rapide 90W ultra-rapide",
       "Performance gaming excellente"
     ],
     cons: [
@@ -159,8 +212,8 @@ export const phones: Phone[] = [
     },
     rating: 4.6,
     slug: "poco-x7-pro",
-    description: "Le Poco X7 Pro combine un processeur MediaTek Dimensity 8300 Ultra puissant, une caméra 64MP et une charge ultra-rapide 67W. Idéal pour le gaming et les performances.",
-    lastUpdated: "2025-01-20"
+    description: "Le Poco X7 Pro combine un processeur MediaTek Dimensity 8400 Ultra puissant, une caméra 50MP et une charge ultra-rapide 90W. Idéal pour le gaming et les performances.",
+    lastUpdated: "2024-12-10"
   },
   {
     id: "4",
@@ -168,11 +221,26 @@ export const phones: Phone[] = [
     brand: "Motorola",
     price: 295,
     originalPrice: 349,
-    image: "/images/top5/motorola-edge-50-fusion/front.png",
+    image: "/images/top2/Motorola Edge 50 Fusion.png",
     colors: [
-      { name: "Noir", hex: "#1a1a1a", slug: "noir", image: "/images/top5/motorola-edge-50-fusion/noir/front.png" },
-      { name: "Bleu", hex: "#5C88DA", slug: "bleu", image: "/images/top5/motorola-edge-50-fusion/bleu/front.png" },
-      { name: "Rose", hex: "#ec4899", slug: "rose", image: "/images/top5/motorola-edge-50-fusion/rose/front.png" },
+      { 
+        name: "Forest Grey", 
+        hex: "#37474F", 
+        slug: "forest-grey", 
+        image: "/images/top5/motorola-edge-50-fusion/noir/front.png" 
+      },
+      { 
+        name: "Peacock Blue", 
+        hex: "#0277BD", 
+        slug: "peacock-blue", 
+        image: "/images/top5/motorola-edge-50-fusion/bleu/front.png" 
+      },
+      { 
+        name: "Hot Pink", 
+        hex: "#E91E63", 
+        slug: "hot-pink", 
+        image: "/images/top5/motorola-edge-50-fusion/rose/front.png" 
+      },
     ],
     specs: {
       screen: "6.7\" FHD+ pOLED 144Hz",
@@ -202,7 +270,7 @@ export const phones: Phone[] = [
     rating: 4.5,
     slug: "motorola-edge-50-fusion",
     description: "Le Motorola Edge 50 Fusion offre un écran pOLED 144Hz premium, Android pur et un design élégant. Le meilleur choix pour ceux qui privilégient l'expérience utilisateur pure.",
-    lastUpdated: "2025-01-20"
+    lastUpdated: "2024-12-10"
   },
   {
     id: "5",
@@ -210,11 +278,26 @@ export const phones: Phone[] = [
     brand: "Samsung",
     price: 270,
     originalPrice: 299,
-    image: "/images/top5/samsung-galaxy-a26-5g/front.png",
+    image: "/images/top2/Samsung A26.png",
     colors: [
-      { name: "Noir", hex: "#0f172a", slug: "noir", image: "/images/top5/samsung-galaxy-a26-5g/noir/front.png" },
-      { name: "Bleu", hex: "#1428A0", slug: "bleu", image: "/images/top5/samsung-galaxy-a26-5g/bleu/front.png" },
-      { name: "Vert", hex: "#059669", slug: "vert", image: "/images/top5/samsung-galaxy-a26-5g/vert/front.png" },
+      { 
+        name: "Awesome Black", 
+        hex: "#0A0A0A", 
+        slug: "awesome-black", 
+        image: "/images/top5/samsung-galaxy-a26-5g/noir/front.png" 
+      },
+      { 
+        name: "Awesome Blue", 
+        hex: "#1565C0", 
+        slug: "awesome-blue", 
+        image: "/images/top5/samsung-galaxy-a26-5g/bleu/front.png" 
+      },
+      { 
+        name: "Awesome Mint", 
+        hex: "#4CAF50", 
+        slug: "awesome-mint", 
+        image: "/images/top5/samsung-galaxy-a26-5g/vert/front.png" 
+      },
     ],
     specs: {
       screen: "6.5\" FHD+ Super AMOLED",
@@ -244,7 +327,7 @@ export const phones: Phone[] = [
     rating: 4.3,
     slug: "samsung-galaxy-a26-5g",
     description: "Le Samsung Galaxy A26 5G combine un écran Super AMOLED de qualité, la 5G et la fiabilité Samsung avec garantie 2 ans. Un excellent choix pour la longévité.",
-    lastUpdated: "2025-01-20"
+    lastUpdated: "2024-12-10"
   }
 ];
 
@@ -258,4 +341,4 @@ export const getPhoneBySlug = (slug: string): Phone | undefined => {
 
 export const getAllPhones = (): Phone[] => {
   return phones;
-}; 
+};

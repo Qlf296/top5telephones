@@ -15,6 +15,7 @@
     "test:links": "node scripts/test-links.js",
     "test:all": "npm run test:a11y && npm run test:links",
     "check:prices": "node scripts/check-prices.js",
+    "generate:og": "node scripts/generate-og-image-ios.js",
     "prebuild": "npm run validate",
     "strapi:build": "cd backend && npm run build",
     "strapi:start": "cd backend && npm run start"
@@ -22,6 +23,7 @@
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
     "keen-slider": "^6.8.6",
     "next": "^15.3.5",
     "react": "^18",
@@ -35,6 +37,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
+    "canvas": "^3.2.0",
     "concurrently": "^9.2.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

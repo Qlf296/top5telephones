@@ -41,7 +41,12 @@ export function GlassCard({
 
   if (as === 'link' && href) {
     return (
-      <Link href={href} className={baseClasses} target={target} rel={rel}>
+      <Link 
+        href={href} 
+        className={`${baseClasses} link-clickable`}
+        target={target} 
+        rel={rel}
+      >
         {children}
       </Link>
     );
@@ -49,7 +54,12 @@ export function GlassCard({
 
   if (as === 'a' && href) {
     return (
-      <a href={href} className={baseClasses} target={target} rel={rel}>
+      <a 
+        href={href} 
+        className={`${baseClasses} link-clickable`}
+        target={target} 
+        rel={rel}
+      >
         {children}
       </a>
     );

@@ -44,6 +44,33 @@
     max-width: 100vw;
   }
   
+  /* Garantir que tous les liens sont cliquables */
+  a, button, [role="button"] {
+    pointer-events: auto !important;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Classes utilitaires pour les liens cliquables */
+  .link-clickable {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .link-clickable-high {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 20;
+  }
+  
+  /* S'assurer que les éléments interactifs ne sont pas bloqués */
+  [data-interactive="true"] {
+    pointer-events: auto !important;
+    z-index: 10;
+  }
+  
   /* Improve image rendering and prevent CLS */
   img {
     image-rendering: -webkit-optimize-contrast;

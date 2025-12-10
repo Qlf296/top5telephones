@@ -76,7 +76,7 @@ export default function ProductSchema({ phone }: ProductSchemaProps) {
         "value": phone.specs.os
       }
     ],
-    "color": phone.colors?.map(c => c.name).join(", ") || "",
+    "color": phone.colors?.map(c => c.name) || [],
     "manufacturer": {
       "@type": "Brand",
       "name": phone.brand

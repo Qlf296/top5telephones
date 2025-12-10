@@ -97,17 +97,32 @@ export default function ComparateurPage() {
           {/* Comparison Table */}
           {selectedPhoneObjects.length > 0 && (
           <GlassCard className="p-4 sm:p-6">
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-              <h2 className="text-lg font-semibold text-slate-900">
-                Comparaison ({selectedPhoneObjects.length} téléphones)
-              </h2>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => setSelectedPhones([])}
-              >
-                Réinitialiser
-              </Button>
+            <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
+              <div>
+                <h2 className="text-xl font-bold text-slate-900 mb-1">
+                  Comparaison ({selectedPhoneObjects.length} téléphones)
+                </h2>
+                <p className="text-sm text-slate-600">Comparez les caractéristiques côte à côte</p>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => {
+                    // Export PDF (fonctionnalité future)
+                    alert('Export PDF bientôt disponible !');
+                  }}
+                >
+                  Exporter PDF
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => setSelectedPhones([])}
+                >
+                  Réinitialiser
+                </Button>
+              </div>
             </div>
               
               <div className="overflow-x-auto">
@@ -126,12 +141,19 @@ export default function ComparateurPage() {
                   </thead>
                 <tbody className="divide-y divide-white/30">
                     {/* Rating */}
-                    <tr>
-                    <td className="py-3 px-4 font-medium text-slate-900">Note</td>
+                    <tr className="bg-white/30">
+                    <td className="py-4 px-4 font-semibold text-slate-900">Note globale</td>
                       {selectedPhoneObjects.map((phone) => (
-                        <td key={phone.id} className="py-3 px-4 text-center">
-                          <div className="text-yellow-400 text-sm">{generateStars(phone.rating)}</div>
-                        <div className="text-sm text-slate-600">({phone.rating}/5)</div>
+                        <td key={phone.id} className="py-4 px-4 text-center">
+                          <div className="flex flex-col items-center gap-2">
+                            <div className="text-yellow-400 text-lg">{generateStars(phone.rating)}</div>
+                            <div className="text-base font-semibold text-slate-900">({phone.rating}/5)</div>
+                            {phone.rating === Math.max(...selectedPhoneObjects.map(p => p.rating)) && (
+                              <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-700 font-medium">
+                                Meilleur
+                              </span>
+                            )}
+                          </div>
                         </td>
                       ))}
                     </tr>
@@ -207,14 +229,14 @@ export default function ComparateurPage() {
                     </tr>
 
                     {/* Pros */}
-                    <tr>
-                    <td className="py-3 px-4 font-medium text-slate-900">Points forts</td>
+                    <tr className="bg-green-50/30">
+                    <td className="py-4 px-4 font-semibold text-slate-900">Points forts</td>
                       {selectedPhoneObjects.map((phone) => (
-                        <td key={phone.id} className="py-3 px-4 text-center">
-                        <ul className="text-sm text-slate-600 space-y-1">
-                            {phone.pros.slice(0, 3).map((pro, index) => (
-                            <li key={index} className="flex items-start justify-center gap-1">
-                              <span className="text-green-500">✓</span>
+                        <td key={phone.id} className="py-4 px-4">
+                        <ul className="text-sm text-slate-700 space-y-2">
+                            {phone.pros.slice(0, 4).map((pro, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <span className="text-green-500 text-lg flex-shrink-0">✓</span>
                                 <span className="text-left">{pro}</span>
                               </li>
                             ))}
@@ -224,14 +246,14 @@ export default function ComparateurPage() {
                     </tr>
 
                     {/* Cons */}
-                    <tr>
-                    <td className="py-3 px-4 font-medium text-slate-900">Points faibles</td>
+                    <tr className="bg-red-50/20">
+                    <td className="py-4 px-4 font-semibold text-slate-900">Points faibles</td>
                       {selectedPhoneObjects.map((phone) => (
-                        <td key={phone.id} className="py-3 px-4 text-center">
-                        <ul className="text-sm text-slate-600 space-y-1">
-                            {phone.cons.slice(0, 2).map((con, index) => (
-                            <li key={index} className="flex items-start justify-center gap-1">
-                              <span className="text-red-500">✗</span>
+                        <td key={phone.id} className="py-4 px-4">
+                        <ul className="text-sm text-slate-700 space-y-2">
+                            {phone.cons.slice(0, 3).map((con, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <span className="text-red-500 text-lg flex-shrink-0">✗</span>
                                 <span className="text-left">{con}</span>
                               </li>
                             ))}

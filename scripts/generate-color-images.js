@@ -23,6 +23,7 @@ const phones = [
       { name: 'Noir', hex: '#0f172a', slug: 'noir' },
       { name: 'Bleu', hex: '#1428A0', slug: 'bleu' },
       { name: 'Violet', hex: '#9333ea', slug: 'violet' },
+      { name: 'Jaune', hex: '#CDDC39', slug: 'jaune' },
     ],
   },
   {

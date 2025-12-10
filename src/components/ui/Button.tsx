@@ -30,7 +30,7 @@ type LinkProps = CommonProps & {
 type Props = ButtonProps | LinkProps;
 
 const base =
-  'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-transform duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ios-blue-500';
+  'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-transform duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ios-blue-500 relative z-10 cursor-pointer';
 
 const sizeMap: Record<Size, string> = {
   sm: 'px-3 py-2 text-sm',
@@ -72,7 +72,12 @@ export function Button(props: Props) {
   if ((props as LinkProps).as === 'link') {
     const linkProps = rest as LinkProps;
     return (
-      <Link href={linkProps.href} target={linkProps.target} rel={linkProps.rel} className={classes}>
+      <Link 
+        href={linkProps.href} 
+        target={linkProps.target} 
+        rel={linkProps.rel} 
+        className={`${classes} link-clickable-high`}
+      >
         {leftIcon}
         {children}
         {rightIcon}

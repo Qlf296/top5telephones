@@ -8,15 +8,17 @@ interface FAQPageSchemaProps {
 }
 
 export default function FAQPageSchema({ faqs }: FAQPageSchemaProps) {
+  const baseUrl = 'https://top5telephones.fr';
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": faqs.map(item => ({
       "@type": "Question",
-      "name": faq.question,
+      "name": item.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer
+        "text": item.answer
       }
     }))
   };
@@ -28,4 +30,3 @@ export default function FAQPageSchema({ faqs }: FAQPageSchemaProps) {
     />
   );
 }
-
