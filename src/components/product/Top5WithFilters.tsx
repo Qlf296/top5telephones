@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from 'react';
-import { getAllPhones, Phone } from '@/data/phones';
+import { useState, useCallback, useMemo } from 'react';
+import { getTop5Phones, Phone } from '@/data/phones';
 import { Button } from '@/components/ui/Button';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionShell } from '@/components/ui/SectionShell';
@@ -12,7 +12,7 @@ import { getTop2HeroImage } from '@/lib/image-utils';
 import { FavoriteButton } from './FavoriteButton';
 
 export function Top5WithFilters() {
-  const allPhones = getAllPhones();
+  const allPhones = useMemo(() => getTop5Phones(), []);
   const [filteredPhones, setFilteredPhones] = useState<Phone[]>(allPhones);
   
   // Mémoriser la fonction callback pour éviter les re-renders

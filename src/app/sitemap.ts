@@ -100,6 +100,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...phonePages];
+  const telephonePages: MetadataRoute.Sitemap = getAllPhones().map((phone) => ({
+    url: `${baseUrl}/telephone/${phone.seoSlug}`,
+    lastModified: phone.lastUpdated ? new Date(phone.lastUpdated) : new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  return [...staticPages, ...phonePages, ...telephonePages];
 }
 

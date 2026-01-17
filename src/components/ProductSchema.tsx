@@ -2,11 +2,12 @@ import { Phone } from '@/data/phones';
 
 interface ProductSchemaProps {
   phone: Phone;
+  urlOverride?: string;
 }
 
-export default function ProductSchema({ phone }: ProductSchemaProps) {
+export default function ProductSchema({ phone, urlOverride }: ProductSchemaProps) {
   const baseUrl = 'https://top5telephones.fr';
-  const productUrl = `${baseUrl}/fiche/${phone.slug}`;
+  const productUrl = urlOverride ? `${baseUrl}${urlOverride}` : `${baseUrl}/fiche/${phone.slug}`;
   
   const schema = {
     "@context": "https://schema.org",

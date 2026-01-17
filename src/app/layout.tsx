@@ -164,7 +164,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${inter.variable} antialiased`}>
         <ClientPerformanceMonitor />
         <ErrorBoundary>
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col relative z-10 pointer-events-auto">
             <Header />
             <main className="flex-grow">
               <PageShell>
@@ -197,6 +197,32 @@ export default function RootLayout({
                 anonymize_ip: true,
                 cookie_flags: 'SameSite=None;Secure'
               });
+              `}
+            </Script>
+            <Script id="ga-outbound-clicks" strategy="afterInteractive">
+              {`
+              if (!window.__gaOutboundBound) {
+                window.__gaOutboundBound = true;
+                document.addEventListener('click', function (event) {
+                  try {
+                    var target = event.target;
+                    var anchor = target && target.closest ? target.closest('a') : null;
+                    if (!anchor || !anchor.href) return;
+                    var href = anchor.href;
+                    var isExternal = href.indexOf(window.location.origin) !== 0;
+                    if (!isExternal) return;
+                    if (typeof window.gtag === 'function') {
+                      window.gtag('event', 'outbound_click', {
+                        event_category: 'engagement',
+                        event_label: href,
+                        transport_type: 'beacon'
+                      });
+                    }
+                  } catch (e) {
+                    // no-op
+                  }
+                }, true);
+              }
               `}
             </Script>
           </>

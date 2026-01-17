@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { phones } from '@/data/phones'
+import { getTop5Phones } from '@/data/phones'
 import ArticleSchema from '@/components/seo/ArticleSchema'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
@@ -47,6 +47,7 @@ export const metadata: Metadata = {
 }
 
 export default function Top5SmartphonesPage() {
+  const phones = getTop5Phones()
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}

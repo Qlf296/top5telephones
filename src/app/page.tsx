@@ -69,7 +69,7 @@ export default function HomePage() {
       <section className="pt-8 sm:pt-12 lg:pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 lg:space-y-8">
+            <div className="relative z-10 space-y-6 lg:space-y-8">
               <div className="flex flex-wrap gap-2">
                 <Pill className="bg-ios-blue-500/10 text-ios-blue-700 border-ios-blue-500/20">
                   ⭐ Sélection 2025
@@ -114,8 +114,8 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <GlassCard className="p-6 lg:p-8">
-              <div className="aspect-[4/3] relative overflow-hidden rounded-3xl bg-white/60 border border-white/30 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+            <GlassCard className="relative z-0 p-6 lg:p-8">
+              <div className="aspect-[4/3] relative overflow-hidden rounded-3xl bg-white/60 border border-white/30 shadow-[0_20px_40px_rgba(0,0,0,0.12)] pointer-events-none">
                 <Image
                   src="/images/og-image.jpg"
                   alt="Top 5 smartphones à moins de 300€"
